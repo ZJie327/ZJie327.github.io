@@ -264,17 +264,33 @@ pre, code, .highlight {
 }
 
 [data-theme="dark"] {
-  --primary-color: #2980b9;
+  --primary-color: #;
   --background-color: #1a1a1a;
   --text-color: #f0f0f0;
   --accent-color: #c0392b;
   --header-bg: #2d2d2d;
   --border-color: #444444;
 }
+ /*科技蓝主题 
+      #1E90FF
+辅色: #87CEEB
+文字: #2F4F4F
+背景: #F5F5F5
 
-[data-theme="green"] {
-  --primary-color: #27ae60;
-  --background-color: #f8fff8;
+/* 自然绿主题 
+主色: #32CD32
+辅色: #98FB98
+文字: #2F4F4F
+背景: #FFF8DC*/
+
+/* 温柔紫主题 
+主色: #9370DB
+辅色: #DDA0DD
+文字: #696969
+背景: #F5F5F5*/
+[data-theme="blue"] {
+  --primary-color: #1e90ff;
+  --background-color: #87ceeb;
   --text-color: #2c3e50;
   --accent-color: #e67e22;
   --header-bg: #e8f5e8;
@@ -530,13 +546,13 @@ pre, code, .highlight {
 /* 移动端适配 */
 @media (max-width: 768px) {
   .theme-switcher {
-    top: 450px !important;       /* 移动端更靠上 */
+    top: 500px !important;       /* 移动端更靠上 */
     right: 10px !important;
     padding: 10px !important;
   }
   
   .theme-options {
-    width: 40px !important;     /* 移动端更窄 */
+    width: 30px !important;     /* 移动端更窄 */
     gap: 5px !important;
   }
   
@@ -558,13 +574,13 @@ pre, code, .highlight {
 /* 超小屏幕优化 */
 @media (max-width: 480px) {
   .theme-switcher {
-    top: 450px !important;
+    top: 500px !important;
     right: 5px !important;
     padding: 8px !important;
   }
   
   .theme-options {
-    width: 40px !important;
+    width: 30px !important;
   }
 }
 /* 确保其他元素不会覆盖切换器 */
@@ -665,7 +681,7 @@ pre, code, .highlight {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zjie327.github.io/2025/10/05/hello-world/" data-id="cmgjia9c8000178un0pws8y75" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://zjie327.github.io/2025/10/05/hello-world/" data-id="cmgjjj2f70001x4un4p2hg46e" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -917,9 +933,9 @@ pre, code, .highlight {
             <span class="theme-icon">🌙</span>
             <span class="theme-name">深色</span>
           </button>
-          <button class="theme-btn" data-theme="green" title="绿色主题">
+          <button class="theme-btn" data-theme="blue" title="绿色主题">
             <span class="theme-icon">🌿</span>
-            <span class="theme-name">绿色</span>
+            <span class="theme-name">蓝色</span>
           </button>
         </div>
       </div>
