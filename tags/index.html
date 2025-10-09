@@ -38,6 +38,545 @@
 
 <meta name="generator" content="Hexo 7.3.0"></head>
 
+<style>
+/* ===== 替换地球背景图为自定义图片 ===== */
+#banner {
+  background-image: url('/images/my-header-bg.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+}
+
+/* 确保覆盖所有可能的背景图设置 */
+#header-outer #banner,
+.outer #banner,
+.header #banner {
+  background-image: url('/images/my-header-bg.jpg') !important;
+}
+
+/* 确保头部文字可读性*/
+#banner .site-title,
+#banner .site-title a,
+#banner .site-nav a {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8) !important;
+}
+/* ===== 主题切换器样式 ===== */
+/* 配色方案定义 */
+/*
+.article-entry
+:root {
+  --primary-color: #3498db;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #e74c3c;
+  --header-bg: #f8f9fa;
+  --border-color: #e0e0e0;
+}
+
+[data-theme="dark"] {
+  --primary-color: #2980b9;
+  --background-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --accent-color: #c0392b;
+  --header-bg: #2d2d2d;
+  --border-color: #444444;
+}
+
+[data-theme="green"] {
+  --primary-color: #27ae60;
+  --background-color: #f8fff8;
+  --text-color: #2c3e50;
+  --accent-color: #e67e22;
+  --header-bg: #e8f5e8;
+  --border-color: #c8e6c9;
+}
+
+/* 基础样式 
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.post {
+  border: 1px solid var(--border-color);
+  background: var(--background-color);
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+*/
+/* ===== 完整的主题变量全覆盖（保留头部背景图） ===== 
+:root {
+  --primary-color: #3498db;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #e74c3c;
+  --header-bg: transparent; /* 头部背景设为透明，让地球图片显示 
+  --border-color: #e0e0e0;
+}
+
+[data-theme="dark"] {
+  --primary-color: #2980b9;
+  --background-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --accent-color: #c0392b;
+  --header-bg: transparent; /* 保持透明 
+  --border-color: #444444;
+}
+
+[data-theme="green"] {
+  --primary-color: #27ae60;
+  --background-color: #f8fff8;
+  --text-color: #2c3e50;
+  --accent-color: #e67e22;
+  --header-bg: transparent; /* 保持透明 
+  --border-color: #c8e6c9;
+}
+
+/* 应用到主要元素，但保留头部背景图 
+html, body {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* 应用到内容区域 
+#container,
+#wrap,
+.outer,
+.footer,
+.sidebar,
+.post,
+.article-entry,
+.article-meta,
+.comments,
+.main-nav,
+.site-nav,
+.content {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* 特别处理头部 - 保持背景图但应用透明背景色 
+.header,
+.site-header,
+.main-header {
+  background-color: var(--header-bg) !important;
+  /* 不设置 background-image: none，保留地球背景图 
+}
+
+/* 确保头部文字在深色主题下可见 
+[data-theme="dark"] .header,
+[data-theme="dark"] .site-title,
+[data-theme="dark"] .site-nav a {
+  color: var(--text-color) !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7); /* 为文字添加阴影，提高在地球图上的可读性 
+}
+
+/* 链接颜色统一 
+a,
+a:link,
+a:visited {
+  color: var(--primary-color) !important;
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-color) !important;
+}
+
+/* 按钮和交互元素 
+button,
+.btn {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+.theme-btn {
+  background: #f8f9fa !important; /* 主题切换器按钮保持独立样式 
+  color: #333 !important;
+  border-color: #dee2e6 !important;
+}
+
+.theme-btn.active {
+  background: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* 代码块 
+pre, code, .highlight {
+  background-color: var(--header-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* 文章卡片等元素的背景 
+.post,
+.article-entry,
+.article-inner {
+  background-color: var(--background-color) !important;
+}
+
+/* 侧边栏 
+.sidebar {
+  background-color: var(--background-color) !important;
+}
+
+/* 页脚 
+.footer {
+  background-color: var(--header-bg) !important;
+}
+/* 强制主题切换器样式 */
+/* 主题切换器样式 - 右侧小尺寸版本 */
+/* ===== 完整的主题变量全覆盖（特别修复header-outer） ===== */
+:root {
+  --primary-color: #3498db;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #e74c3c;
+  --header-bg: #f8f9fa;
+  --border-color: #e0e0e0;
+}
+
+[data-theme="dark"] {
+  --primary-color: #2980b9;
+  --background-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --accent-color: #c0392b;
+  --header-bg: #2d2d2d;
+  --border-color: #444444;
+}
+
+[data-theme="green"] {
+  --primary-color: #27ae60;
+  --background-color: #f8fff8;
+  --text-color: #2c3e50;
+  --accent-color: #e67e22;
+  --header-bg: #e8f5e8;
+  --border-color: #c8e6c9;
+}
+
+/* 应用到主要元素 */
+html, body {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* ===== 关键修复：确保header-outer保持透明 ===== */
+#header-outer,
+#header-outer.outer,
+.header-outer {
+  background-color: transparent !important;
+  /* 不设置 background-image: none，保留地球背景图 */
+}
+
+/* 头部内部的容器也保持透明 */
+#header-outer .header,
+#header-outer .header-inner {
+  background-color: transparent !important;
+}
+
+/* 确保头部文字可读性 */
+#header-outer .site-title,
+#header-outer .site-title a,
+#header-outer .site-nav,
+#header-outer .site-nav a,
+#header-outer .menu,
+#header-outer .menu a {
+  color: var(--text-color) !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] #header-outer .site-title,
+[data-theme="dark"] #header-outer .site-title a,
+[data-theme="dark"] #header-outer .site-nav,
+[data-theme="dark"] #header-outer .site-nav a,
+[data-theme="dark"] #header-outer .menu,
+[data-theme="dark"] #header-outer .menu a {
+  color: #ffffff !important;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.8);
+}
+
+/* ===== 应用到其他内容区域 ===== */
+#container,
+#wrap,
+.outer:not(#header-outer), /* 排除header-outer */
+.footer,
+.sidebar,
+.post,
+.article-entry,
+.article-meta,
+.comments,
+.content {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* 普通头部元素（非header-outer内的） */
+.header:not(#header-outer .header) {
+  background-color: var(--header-bg) !important;
+}
+
+/* 链接颜色统一 */
+a,
+a:link,
+a:visited {
+  color: var(--primary-color) !important;
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-color) !important;
+}
+
+/* 按钮和交互元素 */
+button,
+.btn {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+.theme-btn {
+  background: #f8f9fa !important;
+  color: #333 !important;
+  border-color: #dee2e6 !important;
+}
+
+.theme-btn.active {
+  background: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* 代码块 */
+pre, code, .highlight {
+  background-color: var(--header-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.theme-switcher {
+  position: fixed !important;
+  top: 500px !important;        /* 距离顶部距离 */
+  right: 10px !important;       /* 距离右侧距离 */
+  left: auto !important;
+  bottom: auto !important;
+  transform: none !important;   /* 取消居中变换 */
+  z-index: 999999 !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid #e0e0e0 !important;  /* 更细的边框 */
+  border-radius: 10px !important;
+  padding: 12px !important;     /* 缩小内边距 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  width: auto !important;
+  height: auto !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  backdrop-filter: blur(10px);  /* 毛玻璃效果 */
+}
+
+.theme-options {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;          /* 缩小按钮间距 */
+  width: 50px !important;      /* 缩小整体宽度 */
+}
+
+.theme-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;          /* 缩小图标文字间距 */
+  padding: 6px 8px !important;  /* 缩小按钮内边距 */
+  background: #f8f9fa !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-size: 11px !important;   /* 缩小字体 */
+  font-weight: 500 !important;
+  color: #333 !important;
+  transition: all 0.2s ease !important;
+  width: 100% !important;
+  min-height: 32px !important;  /* 确保触摸目标足够大 */
+}
+
+.theme-btn:hover {
+  background: #e9ecef !important;
+  transform: scale(1.02) !important;  /* 更温和的悬停效果 */
+}
+
+.theme-btn.active {
+  background: #3498db !important;
+  color: white !important;
+  border-color: #3498db !important;
+}
+
+.theme-icon {
+  font-size: 12px !important;   /* 缩小图标 */
+}
+
+.theme-name {
+  font-size: 10px !important;   /* 缩小文字 */
+  font-weight: 500 !important;
+}   
+/*
+.theme-switcher {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 999999 !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  border: 3px solid #e74c3c !important;
+  border-radius: 15px !important;
+  padding: 20px !important;
+  box-shadow: 0 0 50px rgba(0,0,0,0.5) !important;
+  width: auto !important;
+  height: auto !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.theme-options {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  width: 150px !important;
+}
+
+.theme-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 12px !important;
+  background: #f8f9fa !important;
+  border: 2px solid #dee2e6 !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+  transition: all 0.3s ease !important;
+  width: 100% !important;
+}
+
+.theme-btn:hover {
+  background: #e9ecef !important;
+  transform: scale(1.05) !important;
+}
+
+.theme-btn.active {
+  background: #3498db !important;
+  color: white !important;
+  border-color: #3498db !important;
+}
+
+.theme-icon {
+  font-size: 16px !important;
+}
+
+.theme-name {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}  */
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .theme-switcher {
+    top: 40% !important;
+    padding: 15px !important;
+  }
+  
+  .theme-options {
+    width: 130px !important;
+  }
+  
+  .theme-btn {
+    padding: 10px !important;
+    font-size: 13px !important;
+  }
+}
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .theme-switcher {
+    top: 450px !important;       /* 移动端更靠上 */
+    right: 10px !important;
+    padding: 10px !important;
+  }
+  
+  .theme-options {
+    width: 40px !important;     /* 移动端更窄 */
+    gap: 5px !important;
+  }
+  
+  .theme-btn {
+    padding: 8px 6px !important;
+    font-size: 10px !important;
+    min-height: 36px !important; /* 移动端触摸目标更大 */
+  }
+  
+  .theme-icon {
+    font-size: 14px !important; /* 移动端图标稍大 */
+  }
+  
+  .theme-name {
+    font-size: 9px !important;
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+  .theme-switcher {
+    top: 450px !important;
+    right: 5px !important;
+    padding: 8px !important;
+  }
+  
+  .theme-options {
+    width: 40px !important;
+  }
+}
+/* 确保其他元素不会覆盖切换器 */
+.header,
+.footer,
+.article-entry,
+.post,
+.content-wrap {
+  position: relative;
+  z-index: 1;
+}
+</style>
 <body>
   <div id="container">
     <div id="wrap">
@@ -104,7 +643,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zjie327.github.io/tags/index.html" data-id="cmgj3p5bp000768un8d5m1ml1" data-title="tags" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://zjie327.github.io/tags/index.html" data-id="cmgjia9cd000978un2ift55yo" data-title="tags" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -275,26 +814,90 @@
 
 
   </div>
-  <!-- 主题切换器容器，固定定位在页面右侧 -->
-<div class="theme-switcher">
-  <div class="theme-options">
-    <!-- 每个button的data-theme属性对应CSS中的配色方案名称 -->
-    <button class="theme-btn" data-theme="light" title="浅色模式">
-      <span class="theme-icon">☀️</span>
-      <span class="theme-name">浅色</span>
-    </button>
+  
+  <script>
+  // 主题管理功能
+  function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+  }
+
+  function setTheme(themeName) {
+    document.documentElement.setAttribute('data-theme', themeName);
+    localStorage.setItem('theme', themeName);
     
-    <button class="theme-btn" data-theme="dark" title="深色模式">
-      <span class="theme-icon">🌙</span>
-      <span class="theme-name">深色</span>
-    </button>
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.theme === themeName);
+    });
+  }
+
+  function bindThemeEvents() {
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.theme-btn')) {
+        const themeBtn = e.target.closest('.theme-btn');
+        setTheme(themeBtn.dataset.theme);
+        
+        // 移动端触觉反馈（如果支持）
+        if (window.navigator.vibrate) {
+          window.navigator.vibrate(10);
+        }
+      }
+    });
+
+    // 键盘快捷键 (Alt + T 循环切换主题)
+    document.addEventListener('keydown', function(e) {
+      if (e.altKey && e.key === 't') {
+        e.preventDefault();
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const themes = ['light', 'dark', 'green'];
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextIndex = (currentIndex + 1) % themes.length;
+        setTheme(themes[nextIndex]);
+      }
+    });
+  }
+
+  // 动态创建主题切换器
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('=== 主题切换器脚本开始执行 ===');
     
-    <button class="theme-btn" data-theme="green" title="绿色主题">
-      <span class="theme-icon">🌿</span>
-      <span class="theme-name">绿色</span>
-    </button>
-    <!-- 想添加更多主题？复制上面的button，修改data-theme、title、图标和文字 -->
-  </div>
-</div>
+    // 如果切换器已经存在，跳过
+    if (document.querySelector('.theme-switcher')) {
+      console.log('主题切换器已存在');
+      return;
+    }
+    
+    console.log('开始创建主题切换器');
+    
+    // 创建切换器HTML
+    const switcherHTML = `
+      <div class="theme-switcher">
+        <div class="theme-options">
+          <button class="theme-btn" data-theme="light" title="浅色模式">
+            <span class="theme-icon">☀️</span>
+            <span class="theme-name">浅色</span>
+          </button>
+          <button class="theme-btn" data-theme="dark" title="深色模式">
+            <span class="theme-icon">🌙</span>
+            <span class="theme-name">深色</span>
+          </button>
+          <button class="theme-btn" data-theme="green" title="绿色主题">
+            <span class="theme-icon">🌿</span>
+            <span class="theme-name">绿色</span>
+          </button>
+        </div>
+      </div>
+    `;
+    
+    // 插入到页面中
+    document.body.insertAdjacentHTML('beforeend', switcherHTML);
+    console.log('主题切换器已插入到页面');
+    
+    // 初始化主题和事件绑定
+    initTheme();
+    bindThemeEvents();
+    console.log('主题初始化完成');
+  });
+  </script>
 </body>
 </html>
