@@ -75,7 +75,7 @@
   --background-color: #1a1a1a;
   --text-color: #333333;
   --accent-color: #c0392b;
-  --header-bg: #2d2d2d;
+  --header-bg: #ffffff;
   --border-color: #444444;
 }
 [data-theme="blue"] {
@@ -86,7 +86,14 @@
   --header-bg: #e8f5e8;
   --border-color: #c8e6c9;
 }
-
+[data-theme="yellow"] {
+  --primary-color: #ebeb87;
+  --background-color: #ffa11e;
+  --text-color: #2c3e50;
+  --accent-color: #e67e22;
+  --header-bg: #e8f5e8;
+  --border-color: #c8e6c9;
+}
 /* 应用到主要元素 */
 html, body {
   background-color: var(--background-color) !important;
@@ -438,7 +445,7 @@ pre, code, .highlight {
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li></ul>
     </div>
   </div>
 
@@ -451,11 +458,23 @@ pre, code, .highlight {
       <ul>
         
           <li>
+            <a href="/2025/10/11/Markdown%20%E6%A0%BC%E5%BC%8F/">Markdown格式</a>
+          </li>
+        
+          <li>
             <a href="/2025/10/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/">我的第一篇技术文章</a>
           </li>
         
           <li>
             <a href="/2025/10/05/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/11/HTML%20%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/">HTML 功能测试</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/11/Markdown%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0-%E5%AF%B9%E8%AF%9D%E6%A1%86/">HTML 演示文章-对话框</a>
           </li>
         
       </ul>
@@ -544,7 +563,7 @@ pre, code, .highlight {
       if (e.altKey && e.key === 't') {
         e.preventDefault();
         const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-        const themes = ['light', 'dark', 'blue'];
+        const themes = ['light', 'dark', 'blue','yellow'];
         const currentIndex = themes.indexOf(currentTheme);
         const nextIndex = (currentIndex + 1) % themes.length;
         setTheme(themes[nextIndex]);
@@ -579,6 +598,10 @@ pre, code, .highlight {
           <button class="theme-btn" data-theme="blue" title="蓝色主题">
             <span class="theme-icon">🐬</span>
             <span class="theme-name">蓝色</span>
+          </button>
+          <button class="theme-btn" data-theme="yellow" title="橙色主题">
+            <span class="theme-icon">🍊</span>
+            <span class="theme-name">橙色</span>
           </button>
         </div>
       </div>
