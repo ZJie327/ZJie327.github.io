@@ -73,11 +73,11 @@
 }
 
 [data-theme="dark"] {
-  --primary-color: #;
+  --primary-color: #1a1a1a;
   --background-color: #1a1a1a;
-  --text-color: #f0f0f0;
+  --text-color: #333333;
   --accent-color: #c0392b;
-  --header-bg: #2d2d2d;
+  --header-bg: #ffffff;
   --border-color: #444444;
 }
 [data-theme="blue"] {
@@ -88,7 +88,14 @@
   --header-bg: #e8f5e8;
   --border-color: #c8e6c9;
 }
-
+[data-theme="yellow"] {
+  --primary-color: #ebeb87;
+  --background-color: #ffa11e;
+  --text-color: #2c3e50;
+  --accent-color: #e67e22;
+  --header-bg: #e8f5e8;
+  --border-color: #c8e6c9;
+}
 /* 应用到主要元素 */
 html, body {
   background-color: var(--background-color) !important;
@@ -348,6 +355,10 @@ pre, code, .highlight {
         
           <a class="main-nav-link" href="/archives">Archives</a>
         
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/links">Links</a>
+        
       </nav>
       <nav id="sub-nav">
         
@@ -390,7 +401,7 @@ pre, code, .highlight {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zjie327.github.io/tags/index.html" data-id="cmgjlz0fh00092cunaiu14khs" data-title="tags" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://zjie327.github.io/tags/index.html" data-id="cmgnr9wp70008rwunams60sk1" data-title="tags" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -507,11 +518,23 @@ pre, code, .highlight {
       <ul>
         
           <li>
-            <a href="/2025/10/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/">我的第一篇技术文章</a>
+            <a href="/2025/10/11/HTML%20%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/">HTML 功能测试</a>
           </li>
         
           <li>
-            <a href="/2025/10/05/hello-world/">Hello World</a>
+            <a href="/2025/10/11/Stylus%20%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/">Stylus 样式测试</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/11/Markdown%20%E6%A0%BC%E5%BC%8F/">Markdown格式</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/11/Markdown%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0-%E5%AF%B9%E8%AF%9D%E6%A1%86/">HTML 演示文章-对话框</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/">我的第一篇技术文章</a>
           </li>
         
       </ul>
@@ -539,6 +562,10 @@ pre, code, .highlight {
     <a href="/" class="mobile-nav-link">Home</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+    <a href="/links" class="mobile-nav-link">Links</a>
   
 </nav>
     
@@ -596,7 +623,7 @@ pre, code, .highlight {
       if (e.altKey && e.key === 't') {
         e.preventDefault();
         const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-        const themes = ['light', 'dark', 'blue'];
+        const themes = ['light', 'dark', 'blue','yellow'];
         const currentIndex = themes.indexOf(currentTheme);
         const nextIndex = (currentIndex + 1) % themes.length;
         setTheme(themes[nextIndex]);
@@ -631,6 +658,10 @@ pre, code, .highlight {
           <button class="theme-btn" data-theme="blue" title="蓝色主题">
             <span class="theme-icon">🐬</span>
             <span class="theme-name">蓝色</span>
+          </button>
+          <button class="theme-btn" data-theme="yellow" title="橙色主题">
+            <span class="theme-icon">🍊</span>
+            <span class="theme-name">橙色</span>
           </button>
         </div>
       </div>
