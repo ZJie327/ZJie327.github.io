@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>contact | Mr.Z</title>
+  <title>轮播图进阶 | Mr.Z</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="仅用于测试">
-<meta property="og:type" content="website">
-<meta property="og:title" content="contact">
-<meta property="og:url" content="http://zjie327.github.io/contact/index.html">
+  <meta name="description" content="轮播图进阶  .slideshow-container {   max-width: 800px;   margin: 20px auto;   border-radius: 10px;   overflow: hidden;   box-shadow: 0 4px 15px rgba(0,0,0,0.1); } .slide-item {   width: 100%;   height: 115">
+<meta property="og:type" content="article">
+<meta property="og:title" content="轮播图进阶">
+<meta property="og:url" content="http://zjie327.github.io/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BE%E8%BF%9B%E9%98%B6/index.html">
 <meta property="og:site_name" content="Mr.Z">
-<meta property="og:description" content="仅用于测试">
+<meta property="og:description" content="轮播图进阶  .slideshow-container {   max-width: 800px;   margin: 20px auto;   border-radius: 10px;   overflow: hidden;   box-shadow: 0 4px 15px rgba(0,0,0,0.1); } .slide-item {   width: 100%;   height: 115">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-10-06T14:40:34.000Z">
-<meta property="article:modified_time" content="2025-10-06T14:40:34.310Z">
+<meta property="article:published_time" content="2025-10-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-19T14:52:43.656Z">
 <meta property="article:author" content="ZJie327">
 <meta property="article:tag" content="试验， 学习">
 <meta name="twitter:card" content="summary">
@@ -375,10 +375,10 @@ pre, code, .highlight {
 </header>
 
       <div class="outer">
-        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-轮播图进阶" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/contact/index.html" class="article-date">
-  <time class="dt-published" datetime="2025-10-06T14:40:34.000Z" itemprop="datePublished">2025-10-06</time>
+    <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BE%E8%BF%9B%E9%98%B6/" class="article-date">
+  <time class="dt-published" datetime="2025-10-18T16:00:00.000Z" itemprop="datePublished">2025-10-19</time>
 </a>
     
   </div>
@@ -389,7 +389,7 @@ pre, code, .highlight {
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      contact
+      轮播图进阶
     </h1>
   
 
@@ -397,11 +397,171 @@ pre, code, .highlight {
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="轮播图进阶"><a href="#轮播图进阶" class="headerlink" title="轮播图进阶"></a>轮播图进阶</h2><p></script></p>
+<style>
+.slideshow-container {
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.slide-item {
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  padding-top: 25px;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.slide-item:last-child {
+  border-bottom: none;
+}
+.slideshow-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.slideshow-btn {
+  background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+.slideshow-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.slideshow-btn.stop {
+  background: linear-gradient(to right, #ff6b6b 0%, #ff8e8e 100%);
+}
+.slideshow-status {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+.status-running {
+  color: #27ae60;
+}
+.status-stopped {
+  color: #e74c3c;
+}
+</style>
+<div class="slideshow-container">
+  <div id="test1" class="slide-item"></div>
+  <div id="test2" class="slide-item"></div>
+  <div id="test3" class="slide-item"></div>
+  <div id="test4" class="slide-item"></div>
+  <div id="test5" class="slide-item"></div>
+</div>
+
+<div class="slideshow-controls">
+  <button id="startBtn" class="slideshow-btn">开始轮播</button>
+  <button id="stopBtn" class="slideshow-btn stop">停止轮播</button>
+</div>
+
+<div class="slideshow-status">
+  当前状态: <span id="statusText" class="status-stopped">已停止</span>
+</div>
+
+<script>
+// 等待DOM完全加载
+document.addEventListener('DOMContentLoaded', function() {
+  // 初始化变量
+  let isRunning = false;
+  let timerIds = [];
+  let indexes = [0, 0, 0, 0, 0];
+  
+  // 获取DOM元素
+  const test1 = document.getElementById('test1');
+  const test2 = document.getElementById('test2');
+  const test3 = document.getElementById('test3');
+  const test4 = document.getElementById('test4');
+  const test5 = document.getElementById('test5');
+  const startBtn = document.getElementById('startBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const statusText = document.getElementById('statusText');
+  const divs = [test1, test2, test3, test4, test5];
+  
+  // 颜色数组
+  const colors = [
+    ['#FF6B6B', '#FF8E8E', '#FFA8A8', '#FFC2C2', '#FFDCDC'],
+    ['#4ECDC4', '#7FE7E0', '#A8F0EA', '#D1F9F6', '#EAFCFA'],
+    ['#45B7D1', '#6FC8E0', '#99D9EB', '#C3E9F5', '#ECF8FD'],
+    ['#FFA07A', '#FFB596', '#FFCAB3', '#FFDFD0', '#FFF4ED'],
+    ['#98D8C8', '#B1E2D4', '#CBEDE1', '#E4F7EF', '#FDFFFE']
+  ];
+  
+  // 内容数组
+  const htmls = [
+    ['<h1>Python</h1>', '<h1>CSS</h1>', '<h1>JavaScript</h1>', '<h1>HTML</h1>', '<h1>AJAX</h1>'],
+    ['<h1>CSS</h1>', '<h1>JavaScript</h1>', '<h1>HTML</h1>', '<h1>AJAX</h1>', '<h1>Python</h1>'],
+    ['<h1>JavaScript</h1>', '<h1>HTML</h1>', '<h1>AJAX</h1>', '<h1>Python</h1>', '<h1>CSS</h1>'],
+    ['<h1>HTML</h1>', '<h1>AJAX</h1>', '<h1>Python</h1>', '<h1>CSS</h1>', '<h1>JavaScript</h1>'],
+    ['<h1>AJAX</h1>', '<h1>Python</h1>', '<h1>CSS</h1>', '<h1>JavaScript</h1>', '<h1>HTML</h1>']
+  ];
+  
+  // 开始轮播
+  function startSlideshow() {
+    if (isRunning) return;
+    
+    isRunning = true;
+    statusText.textContent = "运行中";
+    statusText.className = "status-running";
+    
+    // 为每个div创建定时器
+    for (let i = 0; i < divs.length; i++) {
+      const timerId = setInterval(function() {
+        divs[i].style.backgroundColor = colors[i][indexes[i] % colors[i].length];
+        divs[i].innerHTML = htmls[i][indexes[i] % htmls[i].length];
+        indexes[i]++;
+      }, 450);
+      
+      timerIds.push(timerId);
+    }
+  }
+  
+  // 停止轮播
+  function stopSlideshow() {
+    if (!isRunning) return;
+    
+    isRunning = false;
+    statusText.textContent = "已停止";
+    statusText.className = "status-stopped";
+    
+    // 清除所有定时器
+    timerIds.forEach(timerId => clearInterval(timerId));
+    timerIds = [];
+  }
+  
+  // 绑定点击事件
+  startBtn.addEventListener('click', startSlideshow);
+  stopBtn.addEventListener('click', stopSlideshow);
+  
+  // 初始化显示
+  for (let i = 0; i < divs.length; i++) {
+    divs[i].style.backgroundColor = colors[i][0];
+    divs[i].innerHTML = htmls[i][0];
+  }
+});
+</script>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zjie327.github.io/contact/index.html" data-id="cmgxv2g380004bwunadopazfn" data-title="contact" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://zjie327.github.io/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BE%E8%BF%9B%E9%98%B6/" data-id="cmgxv2g3e000dbwunbglsee8k" data-title="轮播图进阶" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -409,6 +569,25 @@ pre, code, .highlight {
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          轮播图level.2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">轮播图level.1</div>
+    </a>
+  
+</nav>
+
   
 </article>
 

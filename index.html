@@ -375,6 +375,1030 @@ pre, code, .highlight {
       <div class="outer">
         <section id="main">
   
+    <article id="post-轮播图level2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel2/" class="article-date">
+  <time class="dt-published" datetime="2025-10-18T16:00:00.000Z" itemprop="datePublished">2025-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel2/">轮播图level.2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="轮播图level-2"><a href="#轮播图level-2" class="headerlink" title="轮播图level.2"></a>轮播图level.2</h2><style>
+.slideshow-wrapper {
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+#test1{
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  padding-top: 25px;
+  border: 1px solid red;
+}
+#test2{
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  padding-top: 25px;
+  border: 1px solid red;
+}
+#test3{
+  width: 100%;
+  height: 115px;
+  padding-top: 25px;
+  border: 1px solid red;
+}
+#test4{
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  padding-top: 25px;
+  /*border: 1px solid red;*/
+}
+#test5{
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  padding-top: 25px;
+/*border: 1px solid red;*/
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.control-btn {
+  background: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.control-btn.stop {
+  background: #f44336;
+}
+.status {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+</style>
+<div class="slideshow-wrapper">
+  <div id="test1"></div>
+  <div id="test2"></div>
+  <div id="test3"></div>
+  <div id="test4"></div>
+  <div id="test5"></div>
+</div>
+<div class="controls">
+  <button id="startBtn" class="control-btn">开始轮播</button>
+  <button id="stopBtn" class="control-btn stop">停止轮播</button>
+</div>
+<div class="status">
+  当前状态: <span id="statusText">已停止</span>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let isRunning = false;
+  let timerIds = [];
+  let index1=0, index2=0, index3=0, index4=0, index5=0;
+  const obj1 = document.getElementById('test1');
+  const obj2 = document.getElementById('test2');
+  const obj3 = document.getElementById('test3');
+  const obj4 = document.getElementById('test4');
+  const obj5 = document.getElementById('test5');
+  const startBtn = document.getElementById('startBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const statusText = document.getElementById('statusText');
+  const colors1 = ['red','green','blue','yellow','gray'];
+  const colors2 = ['green','blue','yellow','gray','red'];
+  const colors3 = ['blue','yellow','gray','red','green'];
+  const colors4 = ['yellow','gray','red','green','blue'];
+  const colors5 = ['gray','red','green','blue','yellow'];
+  const divs = document.getElementsByTagName('div');
+  const html1 =['<h1>python</h1>','<h1>css</h1>','<h1>javascript</h1>','<h1>html</h1>','<h1>AJAX</h1>'];
+  const html2 =['<h1>css</h1>','<h1>javascript</h1>','<h1>html</h1>','<h1>AJAX</h1>','<h1>python</h1>'];
+  const html3 =['<h1>javascript</h1>','<h1>html</h1>','<h1>AJAX</h1>','<h1>python</h1>','<h1>css</h1>'];
+  const html4 =['<h1>html</h1>','<h1>AJAX</h1>','<h1>python</h1>','<h1>css</h1>','<h1>javascript</h1>'];
+  const html5 =['<h1>AJAX</h1>','<h1>python</h1>','<h1>css</h1>','<h1>javascript</h1>','<h1>html</h1>'];
+  function startSlideshow() {
+    if (isRunning) return;
+      isRunning = true;
+      statusText.textContent = "运行中";
+    timerIds.push(setInterval(function(){
+      obj1.style.backgroundColor=colors1[index1%colors1.length];
+      divs[0].innerHTML=html1[index1%html1.length];
+      index1++;
+    },450));
+    timerIds.push(setInterval(function(){
+      obj2.style.backgroundColor=colors2[index2%colors2.length];
+      divs[1].innerHTML=html2[index2%html2.length];
+      index2++;            
+    },450));
+    timerIds.push(setInterval(function(){
+      obj3.style.backgroundColor=colors3[index3%colors3.length];
+      divs[2].innerHTML=html3[index3%html3.length];
+      index3++;
+    },450));
+    timerIds.push(setInterval(function(){
+      obj4.style.backgroundColor=colors4[index4%colors4.length];
+      divs[3].innerHTML=html4[index4%html4.length];
+      index4++;
+    },450));
+    timerIds.push(setInterval(function(){
+      obj5.style.backgroundColor=colors5[index5%colors5.length];
+      divs[4].innerHTML=html5[index5%html5.length];
+      index5++;
+    },450));
+  }
+  function stopSlideshow() {
+    if (!isRunning) return;
+    isRunning = false;
+    statusText.textContent = "已停止";
+    timerIds.forEach(timerId => clearInterval(timerId));
+    timerIds = [];
+  }
+  startBtn.addEventListener('click', startSlideshow);
+  stopBtn.addEventListener('click', stopSlideshow);
+  // 初始化显示
+  obj1.style.backgroundColor = colors1[0];
+  obj1.innerHTML = html1[0];
+  obj2.style.backgroundColor = colors2[0];
+  obj2.innerHTML = html2[0];
+  obj3.style.backgroundColor = colors3[0];
+  obj3.innerHTML = html3[0];
+  obj4.style.backgroundColor = colors4[0];
+  obj4.innerHTML = html4[0];
+  obj5.style.backgroundColor = colors5[0];
+  obj5.innerHTML = html5[0];
+});
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zjie327.github.io/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel2/" data-id="cmgxv2g390009bwun07pvbnvc" data-title="轮播图level.2" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<!-- ======== GISCUS 调试开始 ======== 
+<section style="border: 2px solid blue; padding: 10px; margin: 20px 0; background: #e3f2fd;">
+  <h4>🔍 Giscus 调试信息</h4>
+  <p>!index: false</p >
+  <p>post.comments: true</p >
+  <p>theme.giscus: {&#34;enable&#34;:true,&#34;repo&#34;:&#34;ZJie327/ZJie327.github.io&#34;,&#34;repo_id&#34;:&#34;R_kgDOP8o_IA&#34;,&#34;category&#34;:&#34;Q&amp;A&#34;,&#34;category_id&#34;:&#34;DIC_kwDOP8o_IM4CwWaC&#34;,&#34;mapping&#34;:&#34;pathname&#34;,&#34;strict&#34;:0,&#34;reactions_enabled&#34;:1,&#34;emit_metadata&#34;:0,&#34;input_position&#34;:&#34;bottom&#34;,&#34;theme&#34;:&#34;catppuccin_macchiato&#34;,&#34;lang&#34;:&#34;zh-CN&#34;,&#34;crossorigin&#34;:&#34;anonymous&#34;}</p >
+  <p>theme.giscus.enable: true</p >
+  <p>所有条件满足: false</p >
+</section>
+
+
+  <section style="border: 2px solid orange; padding: 10px; background: #fff3cd;">
+    <h4>⚠️ Giscus 未显示原因</h4>
+    <p>!index: false</p >
+    <p>post.comments: true</p >
+    <p>theme.giscus.enable: true</p >
+    <p>可能的原因：文章未设置 comments: true 或 Giscus 未启用</p >
+  </section>
+   ======== 配置读取测试 ======== 
+<section style="border: 2px solid purple; padding: 10px; background: #f3e5f5;">
+  <h4>🔧 配置读取测试</h4>
+  <p>theme 对象键: menu, rss, banner, subtitle, links, excerpt_link, fancybox, copyright, sidebar, widgets, archive_type, show_count, recent_posts_limits, google_analytics, gauges_analytics, favicon, twitter, fb_admins, fb_app_id, disqus_shortname, valine, giscus, custom_styles, custom_scripts</p >
+  <p>完整 theme.giscus: {&#34;enable&#34;:true,&#34;repo&#34;:&#34;ZJie327/ZJie327.github.io&#34;,&#34;repo_id&#34;:&#34;R_kgDOP8o_IA&#34;,&#34;category&#34;:&#34;Q&amp;A&#34;,&#34;category_id&#34;:&#34;DIC_kwDOP8o_IM4CwWaC&#34;,&#34;mapping&#34;:&#34;pathname&#34;,&#34;strict&#34;:0,&#34;reactions_enabled&#34;:1,&#34;emit_metadata&#34;:0,&#34;input_position&#34;:&#34;bottom&#34;,&#34;theme&#34;:&#34;catppuccin_macchiato&#34;,&#34;lang&#34;:&#34;zh-CN&#34;,&#34;crossorigin&#34;:&#34;anonymous&#34;}</p >
+</section>
+
+ ======== GISCUS 调试结束 ======== -->
+
+
+
+  
+    <article id="post-轮播图进阶" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BE%E8%BF%9B%E9%98%B6/" class="article-date">
+  <time class="dt-published" datetime="2025-10-18T16:00:00.000Z" itemprop="datePublished">2025-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BE%E8%BF%9B%E9%98%B6/">轮播图进阶</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="轮播图进阶"><a href="#轮播图进阶" class="headerlink" title="轮播图进阶"></a>轮播图进阶</h2><p></script></p>
+<style>
+.slideshow-container {
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.slide-item {
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  padding-top: 25px;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.slide-item:last-child {
+  border-bottom: none;
+}
+.slideshow-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.slideshow-btn {
+  background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+.slideshow-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.slideshow-btn.stop {
+  background: linear-gradient(to right, #ff6b6b 0%, #ff8e8e 100%);
+}
+.slideshow-status {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+.status-running {
+  color: #27ae60;
+}
+.status-stopped {
+  color: #e74c3c;
+}
+</style>
+<div class="slideshow-container">
+  <div id="test1" class="slide-item"></div>
+  <div id="test2" class="slide-item"></div>
+  <div id="test3" class="slide-item"></div>
+  <div id="test4" class="slide-item"></div>
+  <div id="test5" class="slide-item"></div>
+</div>
+
+<div class="slideshow-controls">
+  <button id="startBtn" class="slideshow-btn">开始轮播</button>
+  <button id="stopBtn" class="slideshow-btn stop">停止轮播</button>
+</div>
+
+<div class="slideshow-status">
+  当前状态: <span id="statusText" class="status-stopped">已停止</span>
+</div>
+
+<script>
+// 等待DOM完全加载
+document.addEventListener('DOMContentLoaded', function() {
+  // 初始化变量
+  let isRunning = false;
+  let timerIds = [];
+  let indexes = [0, 0, 0, 0, 0];
+  
+  // 获取DOM元素
+  const test1 = document.getElementById('test1');
+  const test2 = document.getElementById('test2');
+  const test3 = document.getElementById('test3');
+  const test4 = document.getElementById('test4');
+  const test5 = document.getElementById('test5');
+  const startBtn = document.getElementById('startBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const statusText = document.getElementById('statusText');
+  const divs = [test1, test2, test3, test4, test5];
+  
+  // 颜色数组
+  const colors = [
+    ['#FF6B6B', '#FF8E8E', '#FFA8A8', '#FFC2C2', '#FFDCDC'],
+    ['#4ECDC4', '#7FE7E0', '#A8F0EA', '#D1F9F6', '#EAFCFA'],
+    ['#45B7D1', '#6FC8E0', '#99D9EB', '#C3E9F5', '#ECF8FD'],
+    ['#FFA07A', '#FFB596', '#FFCAB3', '#FFDFD0', '#FFF4ED'],
+    ['#98D8C8', '#B1E2D4', '#CBEDE1', '#E4F7EF', '#FDFFFE']
+  ];
+  
+  // 内容数组
+  const htmls = [
+    ['<h1>Python</h1>', '<h1>CSS</h1>', '<h1>JavaScript</h1>', '<h1>HTML</h1>', '<h1>AJAX</h1>'],
+    ['<h1>CSS</h1>', '<h1>JavaScript</h1>', '<h1>HTML</h1>', '<h1>AJAX</h1>', '<h1>Python</h1>'],
+    ['<h1>JavaScript</h1>', '<h1>HTML</h1>', '<h1>AJAX</h1>', '<h1>Python</h1>', '<h1>CSS</h1>'],
+    ['<h1>HTML</h1>', '<h1>AJAX</h1>', '<h1>Python</h1>', '<h1>CSS</h1>', '<h1>JavaScript</h1>'],
+    ['<h1>AJAX</h1>', '<h1>Python</h1>', '<h1>CSS</h1>', '<h1>JavaScript</h1>', '<h1>HTML</h1>']
+  ];
+  
+  // 开始轮播
+  function startSlideshow() {
+    if (isRunning) return;
+    
+    isRunning = true;
+    statusText.textContent = "运行中";
+    statusText.className = "status-running";
+    
+    // 为每个div创建定时器
+    for (let i = 0; i < divs.length; i++) {
+      const timerId = setInterval(function() {
+        divs[i].style.backgroundColor = colors[i][indexes[i] % colors[i].length];
+        divs[i].innerHTML = htmls[i][indexes[i] % htmls[i].length];
+        indexes[i]++;
+      }, 450);
+      
+      timerIds.push(timerId);
+    }
+  }
+  
+  // 停止轮播
+  function stopSlideshow() {
+    if (!isRunning) return;
+    
+    isRunning = false;
+    statusText.textContent = "已停止";
+    statusText.className = "status-stopped";
+    
+    // 清除所有定时器
+    timerIds.forEach(timerId => clearInterval(timerId));
+    timerIds = [];
+  }
+  
+  // 绑定点击事件
+  startBtn.addEventListener('click', startSlideshow);
+  stopBtn.addEventListener('click', stopSlideshow);
+  
+  // 初始化显示
+  for (let i = 0; i < divs.length; i++) {
+    divs[i].style.backgroundColor = colors[i][0];
+    divs[i].innerHTML = htmls[i][0];
+  }
+});
+</script>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zjie327.github.io/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BE%E8%BF%9B%E9%98%B6/" data-id="cmgxv2g3e000dbwunbglsee8k" data-title="轮播图进阶" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<!-- ======== GISCUS 调试开始 ======== 
+<section style="border: 2px solid blue; padding: 10px; margin: 20px 0; background: #e3f2fd;">
+  <h4>🔍 Giscus 调试信息</h4>
+  <p>!index: false</p >
+  <p>post.comments: true</p >
+  <p>theme.giscus: {&#34;enable&#34;:true,&#34;repo&#34;:&#34;ZJie327/ZJie327.github.io&#34;,&#34;repo_id&#34;:&#34;R_kgDOP8o_IA&#34;,&#34;category&#34;:&#34;Q&amp;A&#34;,&#34;category_id&#34;:&#34;DIC_kwDOP8o_IM4CwWaC&#34;,&#34;mapping&#34;:&#34;pathname&#34;,&#34;strict&#34;:0,&#34;reactions_enabled&#34;:1,&#34;emit_metadata&#34;:0,&#34;input_position&#34;:&#34;bottom&#34;,&#34;theme&#34;:&#34;catppuccin_macchiato&#34;,&#34;lang&#34;:&#34;zh-CN&#34;,&#34;crossorigin&#34;:&#34;anonymous&#34;}</p >
+  <p>theme.giscus.enable: true</p >
+  <p>所有条件满足: false</p >
+</section>
+
+
+  <section style="border: 2px solid orange; padding: 10px; background: #fff3cd;">
+    <h4>⚠️ Giscus 未显示原因</h4>
+    <p>!index: false</p >
+    <p>post.comments: true</p >
+    <p>theme.giscus.enable: true</p >
+    <p>可能的原因：文章未设置 comments: true 或 Giscus 未启用</p >
+  </section>
+   ======== 配置读取测试 ======== 
+<section style="border: 2px solid purple; padding: 10px; background: #f3e5f5;">
+  <h4>🔧 配置读取测试</h4>
+  <p>theme 对象键: menu, rss, banner, subtitle, links, excerpt_link, fancybox, copyright, sidebar, widgets, archive_type, show_count, recent_posts_limits, google_analytics, gauges_analytics, favicon, twitter, fb_admins, fb_app_id, disqus_shortname, valine, giscus, custom_styles, custom_scripts</p >
+  <p>完整 theme.giscus: {&#34;enable&#34;:true,&#34;repo&#34;:&#34;ZJie327/ZJie327.github.io&#34;,&#34;repo_id&#34;:&#34;R_kgDOP8o_IA&#34;,&#34;category&#34;:&#34;Q&amp;A&#34;,&#34;category_id&#34;:&#34;DIC_kwDOP8o_IM4CwWaC&#34;,&#34;mapping&#34;:&#34;pathname&#34;,&#34;strict&#34;:0,&#34;reactions_enabled&#34;:1,&#34;emit_metadata&#34;:0,&#34;input_position&#34;:&#34;bottom&#34;,&#34;theme&#34;:&#34;catppuccin_macchiato&#34;,&#34;lang&#34;:&#34;zh-CN&#34;,&#34;crossorigin&#34;:&#34;anonymous&#34;}</p >
+</section>
+
+ ======== GISCUS 调试结束 ======== -->
+
+
+
+  
+    <article id="post-轮播图level1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel1/" class="article-date">
+  <time class="dt-published" datetime="2025-10-18T16:00:00.000Z" itemprop="datePublished">2025-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel1/">轮播图level.1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="轮播图level-1"><a href="#轮播图level-1" class="headerlink" title="轮播图level.1"></a>轮播图level.1</h2><!--
+<style>
+.slideshow-container {
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+#test1{
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  padding-top: 25px;
+  border: 1px solid red;
+}
+#test2{
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  padding-top: 25px;
+  border: 1px solid red;
+}
+#test3{
+  width: 100%;
+  height: 115px;
+  padding-top: 25px;
+  border: 1px solid red;
+}
+#test4{
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  padding-top: 25px;
+  /*border: 1px solid red;*/
+}
+#test5{
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  padding-top: 25px;
+/*border: 1px solid red;*/
+}
+</style>
+<div class="slideshow-container">
+  <div id="test1"></div>
+  <div id="test2"></div>
+  <div id="test3"></div>
+  <div id="test4"></div>
+  <div id="test5"></div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  index1=0;
+  index2=0;
+  index3=0;
+  index4=0;
+  index5=0;
+  obj1 = document.getElementById('test1');
+  obj2 = document.getElementById('test2');
+  obj3 = document.getElementById('test3');
+  obj4 = document.getElementById('test4');
+  obj5 = document.getElementById('test5');
+  colors1 = ['red','green','blue','yellow','gray']
+  colors2 = ['green','blue','yellow','gray','red']
+  colors3 = ['blue','yellow','gray','red','green']
+  colors4 = ['yellow','gray','red','green','blue']
+  colors5 = ['gray','red','green','blue','yellow']
+  divs = document.getElementsByTagName('div');
+  html1 =['<h1>python</h1>','<h1>css</h1>','<h1>javascript</h1>','<h1>html</h1>','<h1>AJAX</h1>']
+  html2 =['<h1>css</h1>','<h1>javascript</h1>','<h1>html</h1>','<h1>AJAX</h1>','<h1>python</h1>']
+  html3 =['<h1>javascript</h1>','<h1>html</h1>','<h1>AJAX</h1>','<h1>python</h1>','<h1>css</h1>']
+  html4 =['<h1>html</h1>','<h1>AJAX</h1>','<h1>python</h1>','<h1>css</h1>','<h1>javascript</h1>']
+  html5 =['<h1>AJAX</h1>','<h1>python</h1>','<h1>css</h1>','<h1>javascript</h1>','<h1>html</h1>']
+  setInterval(function(){
+    obj1.style.backgroundColor=colors1[index1%colors1.length];
+    divs[0].innerHTML=html1[index1%html1.length];
+    index1++;
+  },450)
+  setInterval(function(){
+    obj2.style.backgroundColor=colors2[index2%colors2.length];
+    divs[1].innerHTML=html2[index2%html2.length];
+    index2++;            
+  },450)
+  setInterval(function(){
+    obj3.style.backgroundColor=colors3[index3%colors3.length];
+    divs[2].innerHTML=html3[index3%html3.length];
+    index3++;
+  },450)
+  setInterval(function(){
+    obj4.style.backgroundColor=colors4[index4%colors4.length];
+    divs[3].innerHTML=html4[index4%html4.length];
+    index4++;
+  },450)
+  setInterval(function(){
+    obj5.style.backgroundColor=colors5[index5%colors5.length];
+    divs[4].innerHTML=html5[index5%html5.length];
+    index5++;
+  },450)
+});
+</script>-->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zjie327.github.io/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel1/" data-id="cmgxv2g3f000fbwunemrd0wel" data-title="轮播图level.1" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<!-- ======== GISCUS 调试开始 ======== 
+<section style="border: 2px solid blue; padding: 10px; margin: 20px 0; background: #e3f2fd;">
+  <h4>🔍 Giscus 调试信息</h4>
+  <p>!index: false</p >
+  <p>post.comments: true</p >
+  <p>theme.giscus: {&#34;enable&#34;:true,&#34;repo&#34;:&#34;ZJie327/ZJie327.github.io&#34;,&#34;repo_id&#34;:&#34;R_kgDOP8o_IA&#34;,&#34;category&#34;:&#34;Q&amp;A&#34;,&#34;category_id&#34;:&#34;DIC_kwDOP8o_IM4CwWaC&#34;,&#34;mapping&#34;:&#34;pathname&#34;,&#34;strict&#34;:0,&#34;reactions_enabled&#34;:1,&#34;emit_metadata&#34;:0,&#34;input_position&#34;:&#34;bottom&#34;,&#34;theme&#34;:&#34;catppuccin_macchiato&#34;,&#34;lang&#34;:&#34;zh-CN&#34;,&#34;crossorigin&#34;:&#34;anonymous&#34;}</p >
+  <p>theme.giscus.enable: true</p >
+  <p>所有条件满足: false</p >
+</section>
+
+
+  <section style="border: 2px solid orange; padding: 10px; background: #fff3cd;">
+    <h4>⚠️ Giscus 未显示原因</h4>
+    <p>!index: false</p >
+    <p>post.comments: true</p >
+    <p>theme.giscus.enable: true</p >
+    <p>可能的原因：文章未设置 comments: true 或 Giscus 未启用</p >
+  </section>
+   ======== 配置读取测试 ======== 
+<section style="border: 2px solid purple; padding: 10px; background: #f3e5f5;">
+  <h4>🔧 配置读取测试</h4>
+  <p>theme 对象键: menu, rss, banner, subtitle, links, excerpt_link, fancybox, copyright, sidebar, widgets, archive_type, show_count, recent_posts_limits, google_analytics, gauges_analytics, favicon, twitter, fb_admins, fb_app_id, disqus_shortname, valine, giscus, custom_styles, custom_scripts</p >
+  <p>完整 theme.giscus: {&#34;enable&#34;:true,&#34;repo&#34;:&#34;ZJie327/ZJie327.github.io&#34;,&#34;repo_id&#34;:&#34;R_kgDOP8o_IA&#34;,&#34;category&#34;:&#34;Q&amp;A&#34;,&#34;category_id&#34;:&#34;DIC_kwDOP8o_IM4CwWaC&#34;,&#34;mapping&#34;:&#34;pathname&#34;,&#34;strict&#34;:0,&#34;reactions_enabled&#34;:1,&#34;emit_metadata&#34;:0,&#34;input_position&#34;:&#34;bottom&#34;,&#34;theme&#34;:&#34;catppuccin_macchiato&#34;,&#34;lang&#34;:&#34;zh-CN&#34;,&#34;crossorigin&#34;:&#34;anonymous&#34;}</p >
+</section>
+
+ ======== GISCUS 调试结束 ======== -->
+
+
+
+  
+    <article id="post-轮播图level3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel3/" class="article-date">
+  <time class="dt-published" datetime="2025-10-18T16:00:00.000Z" itemprop="datePublished">2025-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel3/">轮播图level.3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="代码分隔开式-避免互相影响"><a href="#代码分隔开式-避免互相影响" class="headerlink" title="代码分隔开式(避免互相影响)"></a>代码分隔开式(避免互相影响)</h1><h2 id="轮播图level-3"><a href="#轮播图level-3" class="headerlink" title="轮播图level.3"></a>轮播图level.3</h2><style>
+/* 轮播图1专用样式 */
+.slideshow-container-1 {
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: #f8f9fa;
+  padding: 10px;
+}
+
+.slide-item-1 {
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.slide-item-1:last-child {
+  margin-bottom: 0;
+}
+
+.slideshow-controls-1 {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.slideshow-btn-1 {
+  background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.slideshow-btn-1:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.slideshow-btn-1.stop {
+  background: linear-gradient(to right, #ff6b6b 0%, #ff8e8e 100%);
+}
+
+.slideshow-status-1 {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.status-running-1 {
+  color: #27ae60;
+}
+
+.status-stopped-1 {
+  color: #e74c3c;
+}
+</style>
+
+<div class="slideshow-container-1">
+  <div id="slide1-1" class="slide-item-1"></div>
+  <div id="slide2-1" class="slide-item-1"></div>
+  <div id="slide3-1" class="slide-item-1"></div>
+  <div id="slide4-1" class="slide-item-1"></div>
+  <div id="slide5-1" class="slide-item-1"></div>
+</div>
+
+<div class="slideshow-controls-1">
+  <button id="startBtn-1" class="slideshow-btn-1">开始轮播</button>
+  <button id="stopBtn-1" class="slideshow-btn-1 stop">停止轮播</button>
+</div>
+
+<div class="slideshow-status-1">
+  当前状态: <span id="statusText-1" class="status-stopped-1">已停止</span>
+</div>
+
+<script>
+// 轮播图1的独立代码
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    // 初始化变量 - 使用唯一变量名
+    let isRunning1 = false;
+    let timerIds1 = [];
+    let indexes1 = [0, 0, 0, 0, 0];
+    
+    // 获取DOM元素 - 使用唯一ID
+    const slide1_1 = document.getElementById('slide1-1');
+    const slide2_1 = document.getElementById('slide2-1');
+    const slide3_1 = document.getElementById('slide3-1');
+    const slide4_1 = document.getElementById('slide4-1');
+    const slide5_1 = document.getElementById('slide5-1');
+    const startBtn1 = document.getElementById('startBtn-1');
+    const stopBtn1 = document.getElementById('stopBtn-1');
+    const statusText1 = document.getElementById('statusText-1');
+    const slides1 = [slide1_1, slide2_1, slide3_1, slide4_1, slide5_1];
+    
+    // 颜色数组
+    const colors1 = [
+      ['#FF6B6B', '#FF8E8E', '#FFA8A8', '#FFC2C2', '#FFDCDC'],
+      ['#4ECDC4', '#7FE7E0', '#A8F0EA', '#D1F9F6', '#EAFCFA'],
+      ['#45B7D1', '#6FC8E0', '#99D9EB', '#C3E9F5', '#ECF8FD'],
+      ['#FFA07A', '#FFB596', '#FFCAB3', '#FFDFD0', '#FFF4ED'],
+      ['#98D8C8', '#B1E2D4', '#CBEDE1', '#E4F7EF', '#FDFFFE']
+    ];
+    
+    // 内容数组
+    const htmls1 = [
+      ['<h1>Python</h1>', '<h1>CSS</h1>', '<h1>JavaScript</h1>', '<h1>HTML</h1>', '<h1>AJAX</h1>'],
+      ['<h1>CSS</h1>', '<h1>JavaScript</h1>', '<h1>HTML</h1>', '<h1>AJAX</h1>', '<h1>Python</h1>'],
+      ['<h1>JavaScript</h1>', '<h1>HTML</h1>', '<h1>AJAX</h1>', '<h1>Python</h1>', '<h1>CSS</h1>'],
+      ['<h1>HTML</h1>', '<h1>AJAX</h1>', '<h1>Python</h1>', '<h1>CSS</h1>', '<h1>JavaScript</h1>'],
+      ['<h1>AJAX</h1>', '<h1>Python</h1>', '<h1>CSS</h1>', '<h1>JavaScript</h1>', '<h1>HTML</h1>']
+    ];
+    
+    // 开始轮播
+    function startSlideshow1() {
+      if (isRunning1) return;
+      
+      isRunning1 = true;
+      statusText1.textContent = "运行中";
+      statusText1.className = "status-running-1";
+      
+      // 为每个div创建定时器
+      for (let i = 0; i < slides1.length; i++) {
+        const timerId = setInterval(function() {
+          slides1[i].style.backgroundColor = colors1[i][indexes1[i] % colors1[i].length];
+          slides1[i].innerHTML = htmls1[i][indexes1[i] % htmls1[i].length];
+          indexes1[i]++;
+        }, 450);
+        
+        timerIds1.push(timerId);
+      }
+    }
+    
+    // 停止轮播
+    function stopSlideshow1() {
+      if (!isRunning1) return;
+      
+      isRunning1 = false;
+      statusText1.textContent = "已停止";
+      statusText1.className = "status-stopped-1";
+      
+      // 清除所有定时器
+      timerIds1.forEach(timerId => clearInterval(timerId));
+      timerIds1 = [];
+    }
+    
+    // 绑定点击事件
+    startBtn1.addEventListener('click', startSlideshow1);
+    stopBtn1.addEventListener('click', stopSlideshow1);
+    
+    // 初始化显示
+    for (let i = 0; i < slides1.length; i++) {
+      slides1[i].style.backgroundColor = colors1[i][0];
+      slides1[i].innerHTML = htmls1[i][0];
+    }
+  });
+})();
+</script>
+
+<h2 id="轮播图level-2"><a href="#轮播图level-2" class="headerlink" title="轮播图level.2"></a>轮播图level.2</h2><style>
+/* 轮播图2专用样式 */
+.slideshow-container-2 {
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: #f0f2f5;
+  padding: 10px;
+}
+
+.slide-item-2 {
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 2px dashed rgba(255,255,255,0.5);
+}
+
+.slide-item-2:last-child {
+  margin-bottom: 0;
+}
+
+.slideshow-controls-2 {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.slideshow-btn-2 {
+  background: linear-gradient(to right, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.slideshow-btn-2:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.slideshow-btn-2.stop {
+  background: linear-gradient(to right, #f093fb 0%, #f5576c 100%);
+}
+
+.slideshow-status-2 {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.status-running-2 {
+  color: #27ae60;
+}
+
+.status-stopped-2 {
+  color: #e74c3c;
+}
+</style>
+
+<div class="slideshow-container-2">
+  <div id="slide1-2" class="slide-item-2"></div>
+  <div id="slide2-2" class="slide-item-2"></div>
+  <div id="slide3-2" class="slide-item-2"></div>
+  <div id="slide4-2" class="slide-item-2"></div>
+  <div id="slide5-2" class="slide-item-2"></div>
+</div>
+
+<div class="slideshow-controls-2">
+  <button id="startBtn-2" class="slideshow-btn-2">开始轮播</button>
+  <button id="stopBtn-2" class="slideshow-btn-2 stop">停止轮播</button>
+</div>
+
+<div class="slideshow-status-2">
+  当前状态: <span id="statusText-2" class="status-stopped-2">已停止</span>
+</div>
+
+<script>
+// 轮播图2的独立代码
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    // 初始化变量 - 使用唯一变量名
+    let isRunning2 = false;
+    let timerIds2 = [];
+    let indexes2 = [0, 0, 0, 0, 0];
+    
+    // 获取DOM元素 - 使用唯一ID
+    const slide1_2 = document.getElementById('slide1-2');
+    const slide2_2 = document.getElementById('slide2-2');
+    const slide3_2 = document.getElementById('slide3-2');
+    const slide4_2 = document.getElementById('slide4-2');
+    const slide5_2 = document.getElementById('slide5-2');
+    const startBtn2 = document.getElementById('startBtn-2');
+    const stopBtn2 = document.getElementById('stopBtn-2');
+    const statusText2 = document.getElementById('statusText-2');
+    const slides2 = [slide1_2, slide2_2, slide3_2, slide4_2, slide5_2];
+    
+    // 颜色数组 - 使用不同颜色
+    const colors2 = [
+      ['#FF9A8B', '#FF6B6B', '#FF8E8E', '#FFA8A8', '#FFC2C2'],
+      ['#4ECDC4', '#7FE7E0', '#A8F0EA', '#D1F9F6', '#EAFCFA'],
+      ['#45B7D1', '#6FC8E0', '#99D9EB', '#C3E9F5', '#ECF8FD'],
+      ['#FFA07A', '#FFB596', '#FFCAB3', '#FFDFD0', '#FFF4ED'],
+      ['#98D8C8', '#B1E2D4', '#CBEDE1', '#E4F7EF', '#FDFFFE']
+    ];
+    // 内容数组 - 使用不同内容
+    const htmls2 = [
+      ['<h1>Vue.js</h1>', '<h1>React</h1>', '<h1>Angular</h1>', '<h1>Svelte</h1>', '<h1>jQuery</h1>'],
+      ['<h1>React</h1>', '<h1>Angular</h1>', '<h1>Svelte</h1>', '<h1>jQuery</h1>', '<h1>Vue.js</h1>'],
+      ['<h1>Angular</h1>', '<h1>Svelte</h1>', '<h1>jQuery</h1>', '<h1>Vue.js</h1>', '<h1>React</h1>'],
+      ['<h1>Svelte</h1>', '<h1>jQuery</h1>', '<h1>Vue.js</h1>', '<h1>React</h1>', '<h1>Angular</h1>'],
+      ['<h1>jQuery</h1>', '<h1>Vue.js</h1>', '<h1>React</h1>', '<h1>Angular</h1>', '<h1>Svelte</h1>']
+    ];
+    // 开始轮播
+    function startSlideshow2() {
+      if (isRunning2) return;
+      isRunning2 = true;
+      statusText2.textContent = "运行中";
+      statusText2.className = "status-running-2";
+      // 为每个div创建定时器
+      for (let i = 0; i < slides2.length; i++) {
+        const timerId = setInterval(function() {
+          slides2[i].style.backgroundColor = colors2[i][indexes2[i] % colors2[i].length];
+          slides2[i].innerHTML = htmls2[i][indexes2[i] % htmls2[i].length];
+          indexes2[i]++;
+        }, 450);
+        timerIds2.push(timerId);
+      }
+    }
+    // 停止轮播
+    function stopSlideshow2() {
+      if (!isRunning2) return;
+      isRunning2 = false;
+      statusText2.textContent = "已停止";
+      statusText2.className = "status-stopped-2";
+      // 清除所有定时器
+      timerIds2.forEach(timerId => clearInterval(timerId));
+      timerIds2 = [];
+    }
+    // 绑定点击事件
+    startBtn2.addEventListener('click', startSlideshow2);
+    stopBtn2.addEventListener('click', stopSlideshow2);
+    // 初始化显示
+    for (let i = 0; i < slides2.length; i++) {
+      slides2[i].style.backgroundColor = colors2[i][0];
+      slides2[i].innerHTML = htmls2[i][0];
+    }
+  });
+})();
+</script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zjie327.github.io/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel3/" data-id="cmgxv2g3f000hbwun0sv7a6fx" data-title="轮播图level.3" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<!-- ======== GISCUS 调试开始 ======== 
+<section style="border: 2px solid blue; padding: 10px; margin: 20px 0; background: #e3f2fd;">
+  <h4>🔍 Giscus 调试信息</h4>
+  <p>!index: false</p >
+  <p>post.comments: true</p >
+  <p>theme.giscus: {&#34;enable&#34;:true,&#34;repo&#34;:&#34;ZJie327/ZJie327.github.io&#34;,&#34;repo_id&#34;:&#34;R_kgDOP8o_IA&#34;,&#34;category&#34;:&#34;Q&amp;A&#34;,&#34;category_id&#34;:&#34;DIC_kwDOP8o_IM4CwWaC&#34;,&#34;mapping&#34;:&#34;pathname&#34;,&#34;strict&#34;:0,&#34;reactions_enabled&#34;:1,&#34;emit_metadata&#34;:0,&#34;input_position&#34;:&#34;bottom&#34;,&#34;theme&#34;:&#34;catppuccin_macchiato&#34;,&#34;lang&#34;:&#34;zh-CN&#34;,&#34;crossorigin&#34;:&#34;anonymous&#34;}</p >
+  <p>theme.giscus.enable: true</p >
+  <p>所有条件满足: false</p >
+</section>
+
+
+  <section style="border: 2px solid orange; padding: 10px; background: #fff3cd;">
+    <h4>⚠️ Giscus 未显示原因</h4>
+    <p>!index: false</p >
+    <p>post.comments: true</p >
+    <p>theme.giscus.enable: true</p >
+    <p>可能的原因：文章未设置 comments: true 或 Giscus 未启用</p >
+  </section>
+   ======== 配置读取测试 ======== 
+<section style="border: 2px solid purple; padding: 10px; background: #f3e5f5;">
+  <h4>🔧 配置读取测试</h4>
+  <p>theme 对象键: menu, rss, banner, subtitle, links, excerpt_link, fancybox, copyright, sidebar, widgets, archive_type, show_count, recent_posts_limits, google_analytics, gauges_analytics, favicon, twitter, fb_admins, fb_app_id, disqus_shortname, valine, giscus, custom_styles, custom_scripts</p >
+  <p>完整 theme.giscus: {&#34;enable&#34;:true,&#34;repo&#34;:&#34;ZJie327/ZJie327.github.io&#34;,&#34;repo_id&#34;:&#34;R_kgDOP8o_IA&#34;,&#34;category&#34;:&#34;Q&amp;A&#34;,&#34;category_id&#34;:&#34;DIC_kwDOP8o_IM4CwWaC&#34;,&#34;mapping&#34;:&#34;pathname&#34;,&#34;strict&#34;:0,&#34;reactions_enabled&#34;:1,&#34;emit_metadata&#34;:0,&#34;input_position&#34;:&#34;bottom&#34;,&#34;theme&#34;:&#34;catppuccin_macchiato&#34;,&#34;lang&#34;:&#34;zh-CN&#34;,&#34;crossorigin&#34;:&#34;anonymous&#34;}</p >
+</section>
+
+ ======== GISCUS 调试结束 ======== -->
+
+
+
+  
     <article id="post-HTML 功能测试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/10/11/HTML%20%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" class="article-date">
@@ -555,7 +1579,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zjie327.github.io/2025/10/11/HTML%20%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" data-id="cmgofnntl0001usune3tu1948" data-title="HTML 功能测试" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://zjie327.github.io/2025/10/11/HTML%20%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" data-id="cmgxv2g350001bwun2aq232pz" data-title="HTML 功能测试" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -701,7 +1725,79 @@ document.addEventListener('DOMContentLoaded', function() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zjie327.github.io/2025/10/11/Markdown%20%E6%A0%BC%E5%BC%8F/" data-id="cmgofnntn0003usunb4nohlgv" data-title="Markdown格式" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://zjie327.github.io/2025/10/11/Markdown%20%E6%A0%BC%E5%BC%8F/" data-id="cmgxv2g370003bwunhzrgbnr7" data-title="Markdown格式" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+<!-- ======== GISCUS 调试开始 ======== 
+<section style="border: 2px solid blue; padding: 10px; margin: 20px 0; background: #e3f2fd;">
+  <h4>🔍 Giscus 调试信息</h4>
+  <p>!index: false</p >
+  <p>post.comments: true</p >
+  <p>theme.giscus: {&#34;enable&#34;:true,&#34;repo&#34;:&#34;ZJie327/ZJie327.github.io&#34;,&#34;repo_id&#34;:&#34;R_kgDOP8o_IA&#34;,&#34;category&#34;:&#34;Q&amp;A&#34;,&#34;category_id&#34;:&#34;DIC_kwDOP8o_IM4CwWaC&#34;,&#34;mapping&#34;:&#34;pathname&#34;,&#34;strict&#34;:0,&#34;reactions_enabled&#34;:1,&#34;emit_metadata&#34;:0,&#34;input_position&#34;:&#34;bottom&#34;,&#34;theme&#34;:&#34;catppuccin_macchiato&#34;,&#34;lang&#34;:&#34;zh-CN&#34;,&#34;crossorigin&#34;:&#34;anonymous&#34;}</p >
+  <p>theme.giscus.enable: true</p >
+  <p>所有条件满足: false</p >
+</section>
+
+
+  <section style="border: 2px solid orange; padding: 10px; background: #fff3cd;">
+    <h4>⚠️ Giscus 未显示原因</h4>
+    <p>!index: false</p >
+    <p>post.comments: true</p >
+    <p>theme.giscus.enable: true</p >
+    <p>可能的原因：文章未设置 comments: true 或 Giscus 未启用</p >
+  </section>
+   ======== 配置读取测试 ======== 
+<section style="border: 2px solid purple; padding: 10px; background: #f3e5f5;">
+  <h4>🔧 配置读取测试</h4>
+  <p>theme 对象键: menu, rss, banner, subtitle, links, excerpt_link, fancybox, copyright, sidebar, widgets, archive_type, show_count, recent_posts_limits, google_analytics, gauges_analytics, favicon, twitter, fb_admins, fb_app_id, disqus_shortname, valine, giscus, custom_styles, custom_scripts</p >
+  <p>完整 theme.giscus: {&#34;enable&#34;:true,&#34;repo&#34;:&#34;ZJie327/ZJie327.github.io&#34;,&#34;repo_id&#34;:&#34;R_kgDOP8o_IA&#34;,&#34;category&#34;:&#34;Q&amp;A&#34;,&#34;category_id&#34;:&#34;DIC_kwDOP8o_IM4CwWaC&#34;,&#34;mapping&#34;:&#34;pathname&#34;,&#34;strict&#34;:0,&#34;reactions_enabled&#34;:1,&#34;emit_metadata&#34;:0,&#34;input_position&#34;:&#34;bottom&#34;,&#34;theme&#34;:&#34;catppuccin_macchiato&#34;,&#34;lang&#34;:&#34;zh-CN&#34;,&#34;crossorigin&#34;:&#34;anonymous&#34;}</p >
+</section>
+
+ ======== GISCUS 调试结束 ======== -->
+
+
+
+  
+    <article id="post-Stylus 样式测试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/10/11/Stylus%20%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/" class="article-date">
+  <time class="dt-published" datetime="2025-10-10T16:00:00.000Z" itemprop="datePublished">2025-10-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/10/11/Stylus%20%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/">Stylus 样式测试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="测试一下"><a href="#测试一下" class="headerlink" title="测试一下"></a>测试一下</h2><p><mark>Click it</mark><br><button class="dialog-button" onclick="alert('样式生效了！')">测试 Stylus 按钮</button></p>
+<div class="modal-overlay" style="padding: 20px; background: rgba(0,0,0,0.1); margin: 20px 0;">
+  这个区域使用了 .modal-overlay 样式（有背景模糊效果）
+</div>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zjie327.github.io/2025/10/11/Stylus%20%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/" data-id="cmgxv2g380005bwunfm7qalfc" data-title="Stylus 样式测试" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -1211,79 +2307,7 @@ function prevGuideStep() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zjie327.github.io/2025/10/11/Markdown%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0-%E5%AF%B9%E8%AF%9D%E6%A1%86/" data-id="cmgofnnto0005usunh0vvejmm" data-title="HTML 演示文章-对话框" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-<!-- ======== GISCUS 调试开始 ======== 
-<section style="border: 2px solid blue; padding: 10px; margin: 20px 0; background: #e3f2fd;">
-  <h4>🔍 Giscus 调试信息</h4>
-  <p>!index: false</p >
-  <p>post.comments: true</p >
-  <p>theme.giscus: {&#34;enable&#34;:true,&#34;repo&#34;:&#34;ZJie327/ZJie327.github.io&#34;,&#34;repo_id&#34;:&#34;R_kgDOP8o_IA&#34;,&#34;category&#34;:&#34;Q&amp;A&#34;,&#34;category_id&#34;:&#34;DIC_kwDOP8o_IM4CwWaC&#34;,&#34;mapping&#34;:&#34;pathname&#34;,&#34;strict&#34;:0,&#34;reactions_enabled&#34;:1,&#34;emit_metadata&#34;:0,&#34;input_position&#34;:&#34;bottom&#34;,&#34;theme&#34;:&#34;catppuccin_macchiato&#34;,&#34;lang&#34;:&#34;zh-CN&#34;,&#34;crossorigin&#34;:&#34;anonymous&#34;}</p >
-  <p>theme.giscus.enable: true</p >
-  <p>所有条件满足: false</p >
-</section>
-
-
-  <section style="border: 2px solid orange; padding: 10px; background: #fff3cd;">
-    <h4>⚠️ Giscus 未显示原因</h4>
-    <p>!index: false</p >
-    <p>post.comments: true</p >
-    <p>theme.giscus.enable: true</p >
-    <p>可能的原因：文章未设置 comments: true 或 Giscus 未启用</p >
-  </section>
-   ======== 配置读取测试 ======== 
-<section style="border: 2px solid purple; padding: 10px; background: #f3e5f5;">
-  <h4>🔧 配置读取测试</h4>
-  <p>theme 对象键: menu, rss, banner, subtitle, links, excerpt_link, fancybox, copyright, sidebar, widgets, archive_type, show_count, recent_posts_limits, google_analytics, gauges_analytics, favicon, twitter, fb_admins, fb_app_id, disqus_shortname, valine, giscus, custom_styles, custom_scripts</p >
-  <p>完整 theme.giscus: {&#34;enable&#34;:true,&#34;repo&#34;:&#34;ZJie327/ZJie327.github.io&#34;,&#34;repo_id&#34;:&#34;R_kgDOP8o_IA&#34;,&#34;category&#34;:&#34;Q&amp;A&#34;,&#34;category_id&#34;:&#34;DIC_kwDOP8o_IM4CwWaC&#34;,&#34;mapping&#34;:&#34;pathname&#34;,&#34;strict&#34;:0,&#34;reactions_enabled&#34;:1,&#34;emit_metadata&#34;:0,&#34;input_position&#34;:&#34;bottom&#34;,&#34;theme&#34;:&#34;catppuccin_macchiato&#34;,&#34;lang&#34;:&#34;zh-CN&#34;,&#34;crossorigin&#34;:&#34;anonymous&#34;}</p >
-</section>
-
- ======== GISCUS 调试结束 ======== -->
-
-
-
-  
-    <article id="post-Stylus 样式测试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/10/11/Stylus%20%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/" class="article-date">
-  <time class="dt-published" datetime="2025-10-10T16:00:00.000Z" itemprop="datePublished">2025-10-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/10/11/Stylus%20%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/">Stylus 样式测试</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="测试一下"><a href="#测试一下" class="headerlink" title="测试一下"></a>测试一下</h2><p><mark>Click it</mark><br><button class="dialog-button" onclick="alert('样式生效了！')">测试 Stylus 按钮</button></p>
-<div class="modal-overlay" style="padding: 20px; background: rgba(0,0,0,0.1); margin: 20px 0;">
-  这个区域使用了 .modal-overlay 样式（有背景模糊效果）
-</div>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zjie327.github.io/2025/10/11/Stylus%20%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/" data-id="cmgofnnto0007usune7kh0dkv" data-title="Stylus 样式测试" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://zjie327.github.io/2025/10/11/Markdown%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0-%E5%AF%B9%E8%AF%9D%E6%A1%86/" data-id="cmgxv2g3g000kbwun29qeeyyo" data-title="HTML 演示文章-对话框" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -1381,7 +2405,7 @@ npm install
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zjie327.github.io/2025/10/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" data-id="cmgofnntp0009usunhdanduoe" data-title="我的第一篇技术文章" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://zjie327.github.io/2025/10/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" data-id="cmgxv2g390007bwun7h1wche4" data-title="我的第一篇技术文章" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -1473,7 +2497,7 @@ npm install
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zjie327.github.io/2025/10/05/hello-world/" data-id="cmgofnntp000busun81w2agiu" data-title="Hello World!" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://zjie327.github.io/2025/10/05/hello-world/" data-id="cmgxv2g3g000jbwun0dvo1k2k" data-title="Hello World!" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -1567,23 +2591,23 @@ npm install
       <ul>
         
           <li>
+            <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel2/">轮播图level.2</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BE%E8%BF%9B%E9%98%B6/">轮播图进阶</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel1/">轮播图level.1</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel3/">轮播图level.3</a>
+          </li>
+        
+          <li>
             <a href="/2025/10/11/HTML%20%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/">HTML 功能测试</a>
-          </li>
-        
-          <li>
-            <a href="/2025/10/11/Markdown%20%E6%A0%BC%E5%BC%8F/">Markdown格式</a>
-          </li>
-        
-          <li>
-            <a href="/2025/10/11/Markdown%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0-%E5%AF%B9%E8%AF%9D%E6%A1%86/">HTML 演示文章-对话框</a>
-          </li>
-        
-          <li>
-            <a href="/2025/10/11/Stylus%20%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/">Stylus 样式测试</a>
-          </li>
-        
-          <li>
-            <a href="/2025/10/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/">我的第一篇技术文章</a>
           </li>
         
       </ul>

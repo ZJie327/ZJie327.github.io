@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>contact | Mr.Z</title>
+  <title>轮播图level.3 | Mr.Z</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="仅用于测试">
-<meta property="og:type" content="website">
-<meta property="og:title" content="contact">
-<meta property="og:url" content="http://zjie327.github.io/contact/index.html">
+  <meta name="description" content="代码分隔开式(避免互相影响)轮播图level.3 &#x2F;* 轮播图1专用样式 *&#x2F; .slideshow-container-1 {   max-width: 800px;   margin: 20px auto;   border-radius: 10px;   overflow: hidden;   box-shadow: 0 4px 15px rgba(0,0,0,0.1);   backgro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="轮播图level.3">
+<meta property="og:url" content="http://zjie327.github.io/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel3/index.html">
 <meta property="og:site_name" content="Mr.Z">
-<meta property="og:description" content="仅用于测试">
+<meta property="og:description" content="代码分隔开式(避免互相影响)轮播图level.3 &#x2F;* 轮播图1专用样式 *&#x2F; .slideshow-container-1 {   max-width: 800px;   margin: 20px auto;   border-radius: 10px;   overflow: hidden;   box-shadow: 0 4px 15px rgba(0,0,0,0.1);   backgro">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-10-06T14:40:34.000Z">
-<meta property="article:modified_time" content="2025-10-06T14:40:34.310Z">
+<meta property="article:published_time" content="2025-10-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-19T15:16:10.474Z">
 <meta property="article:author" content="ZJie327">
 <meta property="article:tag" content="试验， 学习">
 <meta name="twitter:card" content="summary">
@@ -375,10 +375,10 @@ pre, code, .highlight {
 </header>
 
       <div class="outer">
-        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-轮播图level3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/contact/index.html" class="article-date">
-  <time class="dt-published" datetime="2025-10-06T14:40:34.000Z" itemprop="datePublished">2025-10-06</time>
+    <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel3/" class="article-date">
+  <time class="dt-published" datetime="2025-10-18T16:00:00.000Z" itemprop="datePublished">2025-10-19</time>
 </a>
     
   </div>
@@ -389,7 +389,7 @@ pre, code, .highlight {
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      contact
+      轮播图level.3
     </h1>
   
 
@@ -397,11 +397,348 @@ pre, code, .highlight {
     
     <div class="e-content article-entry" itemprop="articleBody">
       
+        <h1 id="代码分隔开式-避免互相影响"><a href="#代码分隔开式-避免互相影响" class="headerlink" title="代码分隔开式(避免互相影响)"></a>代码分隔开式(避免互相影响)</h1><h2 id="轮播图level-3"><a href="#轮播图level-3" class="headerlink" title="轮播图level.3"></a>轮播图level.3</h2><style>
+/* 轮播图1专用样式 */
+.slideshow-container-1 {
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: #f8f9fa;
+  padding: 10px;
+}
+
+.slide-item-1 {
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.slide-item-1:last-child {
+  margin-bottom: 0;
+}
+
+.slideshow-controls-1 {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.slideshow-btn-1 {
+  background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.slideshow-btn-1:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.slideshow-btn-1.stop {
+  background: linear-gradient(to right, #ff6b6b 0%, #ff8e8e 100%);
+}
+
+.slideshow-status-1 {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.status-running-1 {
+  color: #27ae60;
+}
+
+.status-stopped-1 {
+  color: #e74c3c;
+}
+</style>
+
+<div class="slideshow-container-1">
+  <div id="slide1-1" class="slide-item-1"></div>
+  <div id="slide2-1" class="slide-item-1"></div>
+  <div id="slide3-1" class="slide-item-1"></div>
+  <div id="slide4-1" class="slide-item-1"></div>
+  <div id="slide5-1" class="slide-item-1"></div>
+</div>
+
+<div class="slideshow-controls-1">
+  <button id="startBtn-1" class="slideshow-btn-1">开始轮播</button>
+  <button id="stopBtn-1" class="slideshow-btn-1 stop">停止轮播</button>
+</div>
+
+<div class="slideshow-status-1">
+  当前状态: <span id="statusText-1" class="status-stopped-1">已停止</span>
+</div>
+
+<script>
+// 轮播图1的独立代码
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    // 初始化变量 - 使用唯一变量名
+    let isRunning1 = false;
+    let timerIds1 = [];
+    let indexes1 = [0, 0, 0, 0, 0];
+    
+    // 获取DOM元素 - 使用唯一ID
+    const slide1_1 = document.getElementById('slide1-1');
+    const slide2_1 = document.getElementById('slide2-1');
+    const slide3_1 = document.getElementById('slide3-1');
+    const slide4_1 = document.getElementById('slide4-1');
+    const slide5_1 = document.getElementById('slide5-1');
+    const startBtn1 = document.getElementById('startBtn-1');
+    const stopBtn1 = document.getElementById('stopBtn-1');
+    const statusText1 = document.getElementById('statusText-1');
+    const slides1 = [slide1_1, slide2_1, slide3_1, slide4_1, slide5_1];
+    
+    // 颜色数组
+    const colors1 = [
+      ['#FF6B6B', '#FF8E8E', '#FFA8A8', '#FFC2C2', '#FFDCDC'],
+      ['#4ECDC4', '#7FE7E0', '#A8F0EA', '#D1F9F6', '#EAFCFA'],
+      ['#45B7D1', '#6FC8E0', '#99D9EB', '#C3E9F5', '#ECF8FD'],
+      ['#FFA07A', '#FFB596', '#FFCAB3', '#FFDFD0', '#FFF4ED'],
+      ['#98D8C8', '#B1E2D4', '#CBEDE1', '#E4F7EF', '#FDFFFE']
+    ];
+    
+    // 内容数组
+    const htmls1 = [
+      ['<h1>Python</h1>', '<h1>CSS</h1>', '<h1>JavaScript</h1>', '<h1>HTML</h1>', '<h1>AJAX</h1>'],
+      ['<h1>CSS</h1>', '<h1>JavaScript</h1>', '<h1>HTML</h1>', '<h1>AJAX</h1>', '<h1>Python</h1>'],
+      ['<h1>JavaScript</h1>', '<h1>HTML</h1>', '<h1>AJAX</h1>', '<h1>Python</h1>', '<h1>CSS</h1>'],
+      ['<h1>HTML</h1>', '<h1>AJAX</h1>', '<h1>Python</h1>', '<h1>CSS</h1>', '<h1>JavaScript</h1>'],
+      ['<h1>AJAX</h1>', '<h1>Python</h1>', '<h1>CSS</h1>', '<h1>JavaScript</h1>', '<h1>HTML</h1>']
+    ];
+    
+    // 开始轮播
+    function startSlideshow1() {
+      if (isRunning1) return;
+      
+      isRunning1 = true;
+      statusText1.textContent = "运行中";
+      statusText1.className = "status-running-1";
+      
+      // 为每个div创建定时器
+      for (let i = 0; i < slides1.length; i++) {
+        const timerId = setInterval(function() {
+          slides1[i].style.backgroundColor = colors1[i][indexes1[i] % colors1[i].length];
+          slides1[i].innerHTML = htmls1[i][indexes1[i] % htmls1[i].length];
+          indexes1[i]++;
+        }, 450);
         
+        timerIds1.push(timerId);
+      }
+    }
+    
+    // 停止轮播
+    function stopSlideshow1() {
+      if (!isRunning1) return;
+      
+      isRunning1 = false;
+      statusText1.textContent = "已停止";
+      statusText1.className = "status-stopped-1";
+      
+      // 清除所有定时器
+      timerIds1.forEach(timerId => clearInterval(timerId));
+      timerIds1 = [];
+    }
+    
+    // 绑定点击事件
+    startBtn1.addEventListener('click', startSlideshow1);
+    stopBtn1.addEventListener('click', stopSlideshow1);
+    
+    // 初始化显示
+    for (let i = 0; i < slides1.length; i++) {
+      slides1[i].style.backgroundColor = colors1[i][0];
+      slides1[i].innerHTML = htmls1[i][0];
+    }
+  });
+})();
+</script>
+
+<h2 id="轮播图level-2"><a href="#轮播图level-2" class="headerlink" title="轮播图level.2"></a>轮播图level.2</h2><style>
+/* 轮播图2专用样式 */
+.slideshow-container-2 {
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: #f0f2f5;
+  padding: 10px;
+}
+
+.slide-item-2 {
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 2px dashed rgba(255,255,255,0.5);
+}
+
+.slide-item-2:last-child {
+  margin-bottom: 0;
+}
+
+.slideshow-controls-2 {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.slideshow-btn-2 {
+  background: linear-gradient(to right, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.slideshow-btn-2:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.slideshow-btn-2.stop {
+  background: linear-gradient(to right, #f093fb 0%, #f5576c 100%);
+}
+
+.slideshow-status-2 {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.status-running-2 {
+  color: #27ae60;
+}
+
+.status-stopped-2 {
+  color: #e74c3c;
+}
+</style>
+
+<div class="slideshow-container-2">
+  <div id="slide1-2" class="slide-item-2"></div>
+  <div id="slide2-2" class="slide-item-2"></div>
+  <div id="slide3-2" class="slide-item-2"></div>
+  <div id="slide4-2" class="slide-item-2"></div>
+  <div id="slide5-2" class="slide-item-2"></div>
+</div>
+
+<div class="slideshow-controls-2">
+  <button id="startBtn-2" class="slideshow-btn-2">开始轮播</button>
+  <button id="stopBtn-2" class="slideshow-btn-2 stop">停止轮播</button>
+</div>
+
+<div class="slideshow-status-2">
+  当前状态: <span id="statusText-2" class="status-stopped-2">已停止</span>
+</div>
+
+<script>
+// 轮播图2的独立代码
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    // 初始化变量 - 使用唯一变量名
+    let isRunning2 = false;
+    let timerIds2 = [];
+    let indexes2 = [0, 0, 0, 0, 0];
+    
+    // 获取DOM元素 - 使用唯一ID
+    const slide1_2 = document.getElementById('slide1-2');
+    const slide2_2 = document.getElementById('slide2-2');
+    const slide3_2 = document.getElementById('slide3-2');
+    const slide4_2 = document.getElementById('slide4-2');
+    const slide5_2 = document.getElementById('slide5-2');
+    const startBtn2 = document.getElementById('startBtn-2');
+    const stopBtn2 = document.getElementById('stopBtn-2');
+    const statusText2 = document.getElementById('statusText-2');
+    const slides2 = [slide1_2, slide2_2, slide3_2, slide4_2, slide5_2];
+    
+    // 颜色数组 - 使用不同颜色
+    const colors2 = [
+      ['#FF9A8B', '#FF6B6B', '#FF8E8E', '#FFA8A8', '#FFC2C2'],
+      ['#4ECDC4', '#7FE7E0', '#A8F0EA', '#D1F9F6', '#EAFCFA'],
+      ['#45B7D1', '#6FC8E0', '#99D9EB', '#C3E9F5', '#ECF8FD'],
+      ['#FFA07A', '#FFB596', '#FFCAB3', '#FFDFD0', '#FFF4ED'],
+      ['#98D8C8', '#B1E2D4', '#CBEDE1', '#E4F7EF', '#FDFFFE']
+    ];
+    // 内容数组 - 使用不同内容
+    const htmls2 = [
+      ['<h1>Vue.js</h1>', '<h1>React</h1>', '<h1>Angular</h1>', '<h1>Svelte</h1>', '<h1>jQuery</h1>'],
+      ['<h1>React</h1>', '<h1>Angular</h1>', '<h1>Svelte</h1>', '<h1>jQuery</h1>', '<h1>Vue.js</h1>'],
+      ['<h1>Angular</h1>', '<h1>Svelte</h1>', '<h1>jQuery</h1>', '<h1>Vue.js</h1>', '<h1>React</h1>'],
+      ['<h1>Svelte</h1>', '<h1>jQuery</h1>', '<h1>Vue.js</h1>', '<h1>React</h1>', '<h1>Angular</h1>'],
+      ['<h1>jQuery</h1>', '<h1>Vue.js</h1>', '<h1>React</h1>', '<h1>Angular</h1>', '<h1>Svelte</h1>']
+    ];
+    // 开始轮播
+    function startSlideshow2() {
+      if (isRunning2) return;
+      isRunning2 = true;
+      statusText2.textContent = "运行中";
+      statusText2.className = "status-running-2";
+      // 为每个div创建定时器
+      for (let i = 0; i < slides2.length; i++) {
+        const timerId = setInterval(function() {
+          slides2[i].style.backgroundColor = colors2[i][indexes2[i] % colors2[i].length];
+          slides2[i].innerHTML = htmls2[i][indexes2[i] % htmls2[i].length];
+          indexes2[i]++;
+        }, 450);
+        timerIds2.push(timerId);
+      }
+    }
+    // 停止轮播
+    function stopSlideshow2() {
+      if (!isRunning2) return;
+      isRunning2 = false;
+      statusText2.textContent = "已停止";
+      statusText2.className = "status-stopped-2";
+      // 清除所有定时器
+      timerIds2.forEach(timerId => clearInterval(timerId));
+      timerIds2 = [];
+    }
+    // 绑定点击事件
+    startBtn2.addEventListener('click', startSlideshow2);
+    stopBtn2.addEventListener('click', stopSlideshow2);
+    // 初始化显示
+    for (let i = 0; i < slides2.length; i++) {
+      slides2[i].style.backgroundColor = colors2[i][0];
+      slides2[i].innerHTML = htmls2[i][0];
+    }
+  });
+})();
+</script>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zjie327.github.io/contact/index.html" data-id="cmgxv2g380004bwunadopazfn" data-title="contact" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://zjie327.github.io/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel3/" data-id="cmgxv2g3f000hbwun0sv7a6fx" data-title="轮播图level.3" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -409,6 +746,25 @@ pre, code, .highlight {
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          轮播图level.1
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/10/11/HTML%20%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">HTML 功能测试</div>
+    </a>
+  
+</nav>
+
   
 </article>
 

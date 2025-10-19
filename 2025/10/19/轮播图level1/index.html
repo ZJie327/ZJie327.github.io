@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>contact | Mr.Z</title>
+  <title>轮播图level.1 | Mr.Z</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="仅用于测试">
-<meta property="og:type" content="website">
-<meta property="og:title" content="contact">
-<meta property="og:url" content="http://zjie327.github.io/contact/index.html">
+  <meta name="description" content="轮播图level.1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="轮播图level.1">
+<meta property="og:url" content="http://zjie327.github.io/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel1/index.html">
 <meta property="og:site_name" content="Mr.Z">
-<meta property="og:description" content="仅用于测试">
+<meta property="og:description" content="轮播图level.1">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-10-06T14:40:34.000Z">
-<meta property="article:modified_time" content="2025-10-06T14:40:34.310Z">
+<meta property="article:published_time" content="2025-10-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-19T14:55:55.554Z">
 <meta property="article:author" content="ZJie327">
 <meta property="article:tag" content="试验， 学习">
 <meta name="twitter:card" content="summary">
@@ -375,10 +375,10 @@ pre, code, .highlight {
 </header>
 
       <div class="outer">
-        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-轮播图level1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/contact/index.html" class="article-date">
-  <time class="dt-published" datetime="2025-10-06T14:40:34.000Z" itemprop="datePublished">2025-10-06</time>
+    <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel1/" class="article-date">
+  <time class="dt-published" datetime="2025-10-18T16:00:00.000Z" itemprop="datePublished">2025-10-19</time>
 </a>
     
   </div>
@@ -389,7 +389,7 @@ pre, code, .highlight {
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      contact
+      轮播图level.1
     </h1>
   
 
@@ -397,11 +397,111 @@ pre, code, .highlight {
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="轮播图level-1"><a href="#轮播图level-1" class="headerlink" title="轮播图level.1"></a>轮播图level.1</h2><!--
+<style>
+.slideshow-container {
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+#test1{
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  padding-top: 25px;
+  border: 1px solid red;
+}
+#test2{
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  padding-top: 25px;
+  border: 1px solid red;
+}
+#test3{
+  width: 100%;
+  height: 115px;
+  padding-top: 25px;
+  border: 1px solid red;
+}
+#test4{
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  padding-top: 25px;
+  /*border: 1px solid red;*/
+}
+#test5{
+  width: 100%;
+  height: 115px;
+  text-align: center;
+  padding-top: 25px;
+/*border: 1px solid red;*/
+}
+</style>
+<div class="slideshow-container">
+  <div id="test1"></div>
+  <div id="test2"></div>
+  <div id="test3"></div>
+  <div id="test4"></div>
+  <div id="test5"></div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  index1=0;
+  index2=0;
+  index3=0;
+  index4=0;
+  index5=0;
+  obj1 = document.getElementById('test1');
+  obj2 = document.getElementById('test2');
+  obj3 = document.getElementById('test3');
+  obj4 = document.getElementById('test4');
+  obj5 = document.getElementById('test5');
+  colors1 = ['red','green','blue','yellow','gray']
+  colors2 = ['green','blue','yellow','gray','red']
+  colors3 = ['blue','yellow','gray','red','green']
+  colors4 = ['yellow','gray','red','green','blue']
+  colors5 = ['gray','red','green','blue','yellow']
+  divs = document.getElementsByTagName('div');
+  html1 =['<h1>python</h1>','<h1>css</h1>','<h1>javascript</h1>','<h1>html</h1>','<h1>AJAX</h1>']
+  html2 =['<h1>css</h1>','<h1>javascript</h1>','<h1>html</h1>','<h1>AJAX</h1>','<h1>python</h1>']
+  html3 =['<h1>javascript</h1>','<h1>html</h1>','<h1>AJAX</h1>','<h1>python</h1>','<h1>css</h1>']
+  html4 =['<h1>html</h1>','<h1>AJAX</h1>','<h1>python</h1>','<h1>css</h1>','<h1>javascript</h1>']
+  html5 =['<h1>AJAX</h1>','<h1>python</h1>','<h1>css</h1>','<h1>javascript</h1>','<h1>html</h1>']
+  setInterval(function(){
+    obj1.style.backgroundColor=colors1[index1%colors1.length];
+    divs[0].innerHTML=html1[index1%html1.length];
+    index1++;
+  },450)
+  setInterval(function(){
+    obj2.style.backgroundColor=colors2[index2%colors2.length];
+    divs[1].innerHTML=html2[index2%html2.length];
+    index2++;            
+  },450)
+  setInterval(function(){
+    obj3.style.backgroundColor=colors3[index3%colors3.length];
+    divs[2].innerHTML=html3[index3%html3.length];
+    index3++;
+  },450)
+  setInterval(function(){
+    obj4.style.backgroundColor=colors4[index4%colors4.length];
+    divs[3].innerHTML=html4[index4%html4.length];
+    index4++;
+  },450)
+  setInterval(function(){
+    obj5.style.backgroundColor=colors5[index5%colors5.length];
+    divs[4].innerHTML=html5[index5%html5.length];
+    index5++;
+  },450)
+});
+</script>-->
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zjie327.github.io/contact/index.html" data-id="cmgxv2g380004bwunadopazfn" data-title="contact" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://zjie327.github.io/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel1/" data-id="cmgxv2g3f000fbwunemrd0wel" data-title="轮播图level.1" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -409,6 +509,25 @@ pre, code, .highlight {
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BE%E8%BF%9B%E9%98%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          轮播图进阶
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">轮播图level.3</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
