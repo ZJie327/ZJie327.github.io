@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>HTML 演示文章-对话框 | Mr.Z</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Markdown 标题下面是嵌入的 HTML 组件：         .custom-widget {       border: 2px solid #3498db;       border-radius: 10px;       padding: 20px;       margin: 20px 0;       background: linear-gradient(135deg, #66">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML 演示文章-对话框">
+<meta property="og:url" content="http://zjie327.github.io/2025/10/11/Markdown%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0-%E5%AF%B9%E8%AF%9D%E6%A1%86/index.html">
+<meta property="og:site_name" content="Mr.Z">
+<meta property="og:description" content="Markdown 标题下面是嵌入的 HTML 组件：         .custom-widget {       border: 2px solid #3498db;       border-radius: 10px;       padding: 20px;       margin: 20px 0;       background: linear-gradient(135deg, #66">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-10-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-11T15:00:26.611Z">
+<meta property="article:author" content="ZJie327">
+<meta property="article:tag" content="试验， 学习">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Mr.Z" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<style>
+/* ===== 替换地球背景图为自定义图片 ===== */
+#banner {
+  background-image: url('/images/my-header-bg.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+}
+
+/* 确保覆盖所有可能的背景图设置 */
+#header-outer #banner,
+.outer #banner,
+.header #banner {
+  background-image: url('/images/my-header-bg.jpg') !important;
+}
+
+/* 确保头部文字可读性*/
+#banner .site-title,
+#banner .site-title a,
+#banner .site-nav a {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8) !important;
+}
+
+:root {
+  --primary-color: #3498db;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #e74c3c;
+  --header-bg: #f8f9fa;
+  --border-color: #e0e0e0;
+}
+
+[data-theme="dark"] {
+  --primary-color: #1a1a1a;
+  --background-color: #1a1a1a;
+  --text-color: #333333;
+  --accent-color: #c0392b;
+  --header-bg: #ffffff;
+  --border-color: #444444;
+}
+[data-theme="blue"] {
+  --primary-color: #1e90ff;
+  --background-color: #87ceeb;
+  --text-color: #2c3e50;
+  --accent-color: #e67e22;
+  --header-bg: #e8f5e8;
+  --border-color: #c8e6c9;
+}
+[data-theme="yellow"] {
+  --primary-color: #ebeb87;
+  --background-color: #ffa11e;
+  --text-color: #2c3e50;
+  --accent-color: #e67e22;
+  --header-bg: #e8f5e8;
+  --border-color: #c8e6c9;
+}
+/* 应用到主要元素 */
+html, body {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* ===== 关键修复：确保header-outer保持透明 ===== */
+#header-outer,
+#header-outer.outer,
+.header-outer {
+  background-color: transparent !important;
+  /* 不设置 background-image: none，保留地球背景图 */
+}
+
+/* 头部内部的容器也保持透明 */
+#header-outer .header,
+#header-outer .header-inner {
+  background-color: transparent !important;
+}
+
+/* 确保头部文字可读性 */
+#header-outer .site-title,
+#header-outer .site-title a,
+#header-outer .site-nav,
+#header-outer .site-nav a,
+#header-outer .menu,
+#header-outer .menu a {
+  color: var(--text-color) !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] #header-outer .site-title,
+[data-theme="dark"] #header-outer .site-title a,
+[data-theme="dark"] #header-outer .site-nav,
+[data-theme="dark"] #header-outer .site-nav a,
+[data-theme="dark"] #header-outer .menu,
+[data-theme="dark"] #header-outer .menu a {
+  color: #ffffff !important;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.8);
+}
+
+/* ===== 应用到其他内容区域 ===== */
+#container,
+#wrap,
+.outer:not(#header-outer), /* 排除header-outer */
+.footer,
+.sidebar,
+.post,
+.article-entry,
+.article-meta,
+.comments,
+.content {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* 普通头部元素（非header-outer内的） */
+.header:not(#header-outer .header) {
+  background-color: var(--header-bg) !important;
+}
+
+/* 链接颜色统一 */
+a,
+a:link,
+a:visited {
+  color: var(--primary-color) !important;
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-color) !important;
+}
+
+/* 按钮和交互元素 */
+button,
+.btn {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+.theme-btn {
+  background: #f8f9fa !important;
+  color: #333 !important;
+  border-color: #dee2e6 !important;
+}
+
+.theme-btn.active {
+  background: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* 代码块 */
+pre, code, .highlight {
+  background-color: var(--header-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.theme-switcher {
+  position: fixed !important;
+  top: 500px !important;        /* 距离顶部距离 */
+  right: 10px !important;       /* 距离右侧距离 */
+  left: auto !important;
+  bottom: auto !important;
+  transform: none !important;   /* 取消居中变换 */
+  z-index: 999999 !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid #e0e0e0 !important;  /* 更细的边框 */
+  border-radius: 10px !important;
+  padding: 12px !important;     /* 缩小内边距 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  width: auto !important;
+  height: auto !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  backdrop-filter: blur(10px);  /* 毛玻璃效果 */
+}
+
+.theme-options {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;          /* 缩小按钮间距 */
+  width: 50px !important;      /* 缩小整体宽度 */
+}
+
+.theme-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;          /* 缩小图标文字间距 */
+  padding: 6px 8px !important;  /* 缩小按钮内边距 */
+  background: #f8f9fa !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-size: 11px !important;   /* 缩小字体 */
+  font-weight: 500 !important;
+  color: #333 !important;
+  transition: all 0.2s ease !important;
+  width: 100% !important;
+  min-height: 32px !important;  /* 确保触摸目标足够大 */
+}
+
+.theme-btn:hover {
+  background: #e9ecef !important;
+  transform: scale(1.02) !important;  /* 更温和的悬停效果 */
+}
+
+.theme-btn.active {
+  background: #3498db !important;
+  color: white !important;
+  border-color: #3498db !important;
+}
+
+.theme-icon {
+  font-size: 12px !important;   /* 缩小图标 */
+}
+
+.theme-name {
+  font-size: 10px !important;   /* 缩小文字 */
+  font-weight: 500 !important;
+}   
+
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .theme-switcher {
+    top: 40% !important;
+    padding: 15px !important;
+  }
+  
+  .theme-options {
+    width: 130px !important;
+  }
+  
+  .theme-btn {
+    padding: 10px !important;
+    font-size: 13px !important;
+  }
+}
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .theme-switcher {
+    top: 500px !important;       /* 移动端更靠上 */
+    right: 10px !important;
+    padding: 10px !important;
+  }
+  
+  .theme-options {
+    width: 30px !important;     /* 移动端更窄 */
+    gap: 5px !important;
+  }
+  
+  .theme-btn {
+    padding: 8px 6px !important;
+    font-size: 10px !important;
+    min-height: 36px !important; /* 移动端触摸目标更大 */
+  }
+  
+  .theme-icon {
+    font-size: 14px !important; /* 移动端图标稍大 */
+  }
+  
+  .theme-name {
+    font-size: 9px !important;
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+  .theme-switcher {
+    top: 500px !important;
+    right: 5px !important;
+    padding: 8px !important;
+  }
+  
+  .theme-options {
+    width: 30px !important;
+  }
+}
+/* 确保其他元素不会覆盖切换器 */
+.header,
+.footer,
+.article-entry,
+.post,
+.content-wrap {
+  position: relative;
+  z-index: 1;
+}
+</style>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Mr.Z</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">我的第一个网页</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/links">Links</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ZJie327.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Markdown测试文章-对话框" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/10/11/Markdown%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0-%E5%AF%B9%E8%AF%9D%E6%A1%86/" class="article-date">
+  <time class="dt-published" datetime="2025-10-10T16:00:00.000Z" itemprop="datePublished">2025-10-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      HTML 演示文章-对话框
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Markdown-标题"><a href="#Markdown-标题" class="headerlink" title="Markdown 标题"></a>Markdown 标题</h2><p>下面是嵌入的 HTML 组件：</p>
+<div class="custom-widget">
+  <style>
+    .custom-widget {
+      border: 2px solid #3498db;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .demo-btn {
+      background: #e74c3c;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  
+  <h3>🎯 交互式演示</h3>
+  <p>这个区域完全用 HTML/CSS/JavaScript 创建</p >
+  
+<p>  <button class="demo-btn" onclick="showTime()">显示当前时间</button><br>  <div id="time-display1" style="margin-top: 15px;"></div></p>
+  <script>
+    function showTime() {
+      const now = new Date();
+      document.getElementById('time-display1').innerHTML = 
+        `<strong>当前时间：${now.toLocaleString()}</strong>`;
+    }
+  </script>
+</div>
+
+<h2 id="继续文章内容"><a href="#继续文章内容" class="headerlink" title="继续文章内容"></a>继续文章内容</h2><p>又回到了 Markdown 格式…</p>
+<div class="custom-class" style="color: red;">
+  这是自定义 HTML 内容
+</div>
+
+<details>
+<summary>点击展开</summary>
+这里是隐藏的内容
+</details>
+
+<h2 id="连续警告框"><a href="#连续警告框" class="headerlink" title="连续警告框"></a>连续警告框</h2><div class="alert-sequence">
+  <button class="dialog-button" onclick="showAlerts()">显示连续警告框</button>
+</div>
+
+<script>
+function showAlerts() {
+  alert("这是第一个提示！");
+  alert("小心了！！！");
+  alert("NO!!!");
+}
+</script>
+
+<h2 id="确认对话框"><a href="#确认对话框" class="headerlink" title="确认对话框"></a>确认对话框</h2><p><button class="dialog-button" onclick="showConfirmSequence()">连续确认对话框</button></p>
+<script>
+function showConfirmSequence() {
+  if (confirm("确定要执行第一步吗？")) {
+    if (confirm("ARE YOU SURE？")) {
+      if (confirm("最后确认，真的要执行吗？")) {
+        alert("我猜你是小瑛");
+      }
+    }
+  }
+}
+</script>
+
+<h2 id="自定义模态框"><a href="#自定义模态框" class="headerlink" title="自定义模态框"></a>自定义模态框</h2><!-- 自定义模态框 -->
+<p><button class="dialog-button" onclick="showCustomModal('THE FIRST TIP')">显示自定义提示框</button></p>
+<div id="customModal" style="
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+">
+  <div style="
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    max-width: 400px;
+    width: 90%;
+  ">
+    <h3 id="modalTitle" style="margin-top: 0;">提示</h3>
+    <p id="modalMessage">这里是提示内容</p >
+    <button onclick="closeCustomModal()" style="
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    ">确定</button>
+  </div>
+</div>
+
+<script>
+let currentStep = 0;
+const messages = [
+  "欢迎访问我的博客！",
+  "这里有很多技术内容分享",
+  "希望你能找到有用的信息",
+  "感谢阅读！"
+];
+
+function showCustomModal(message) {
+  document.getElementById('modalMessage').textContent = message;
+  document.getElementById('customModal').style.display = 'block';
+}
+
+function closeCustomModal() {
+  document.getElementById('customModal').style.display = 'none';
+  currentStep++;
+  if (currentStep < messages.length) {
+    setTimeout(() => showCustomModal(messages[currentStep]), 500);
+  } else {
+    currentStep = 0; // 重置
+  }
+}
+</script>
+
+<h2 id="Toast提示-轻量级"><a href="#Toast提示-轻量级" class="headerlink" title="Toast提示(轻量级)"></a>Toast提示(轻量级)</h2><p><button class="dialog-button" onclick="showToastSequence()">显示连续Toast提示</button></p>
+<div id="toastContainer" style="
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+"></div>
+
+<script>
+function showToast(message, type = 'info') {
+  const toast = document.createElement('div');
+  const colors = {
+    info: '#3498db',
+    success: '#2ecc71',
+    warning: '#f39c12',
+    error: '#e74c3c'
+  };
+  
+  toast.style.cssText = `
+    background: ${colors[type]};
+    color: white;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    max-width: 300px;
+  `;
+  
+  toast.textContent = message;
+  document.getElementById('toastContainer').appendChild(toast);
+  
+  // 动画进入
+  setTimeout(() => toast.style.transform = 'translateX(0)', 100);
+  
+  // 自动消失
+  setTimeout(() => {
+    toast.style.transform = 'translateX(100%)';
+    setTimeout(() => toast.remove(), 300);
+  }, 3000);
+}
+
+function showToastSequence() {
+  showToast('页面加载完成', 'success');
+  setTimeout(() => showToast('新内容已更新', 'info'), 1000);
+  setTimeout(() => showToast('请检查千里传音阁', 'warning'), 2000);
+  setTimeout(() => showToast('操作成功！', 'success'), 3000);
+}
+</script>
+
+<h2 id="多步骤表单对话框"><a href="#多步骤表单对话框" class="headerlink" title="多步骤表单对话框"></a>多步骤表单对话框</h2><!-- 多步骤表单对话框 -->
+<p><button class="dialog-button" id="multiStepBtn">多步骤对话框</button></p>
+<div id="multiStepModal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <!-- 步骤1 -->
+    <div id="step1">
+      <h3>步骤 1: 基本信息</h3>
+      <input type="text" id="userName" placeholder="请输入姓名" class="form-input">
+      <div class="button-group">
+        <button class="dialog-button" id="nextBtn1">下一步</button>
+      </div>
+    </div>
+    <!-- 步骤2 -->
+    <div id="step2" style="display: none;">
+      <h3>步骤 2: 选择偏好</h3>
+      <select id="userPreference" class="form-input">
+        <option value="tech">技术文章</option>
+        <option value="design">设计相关</option>
+        <option value="life">生活分享</option>
+      </select>
+      <div class="button-group">
+        <button class="dialog-button dialog-button-secondary" id="prevBtn">上一步</button>
+        <button class="dialog-button dialog-button-success" id="submitBtn">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: none;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  max-width: 500px;
+  width: 90%;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.button-group {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.dialog-button-secondary {
+  background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%) !important;
+}
+
+.dialog-button-success {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%) !important;
+}
+</style>
+
+<script>
+// 使用 DOMContentLoaded 确保页面加载完成
+document.addEventListener('DOMContentLoaded', function() {
+  // 获取元素
+  const multiStepBtn = document.getElementById('multiStepBtn');
+  const multiStepModal = document.getElementById('multiStepModal');
+  const nextBtn1 = document.getElementById('nextBtn1');
+  const prevBtn = document.getElementById('prevBtn');
+  const submitBtn = document.getElementById('submitBtn');
+  
+  let currentStep = 1;
+  
+  // 显示步骤
+  function showStep(step) {
+    document.getElementById('step1').style.display = step === 1 ? 'block' : 'none';
+    document.getElementById('step2').style.display = step === 2 ? 'block' : 'none';
+    currentStep = step;
+  }
+  
+  // 打开对话框
+  multiStepBtn.addEventListener('click', function() {
+    multiStepModal.style.display = 'block';
+    showStep(1);
+  });
+  
+  // 下一步
+  nextBtn1.addEventListener('click', function() {
+    const name = document.getElementById('userName').value;
+    if (!name.trim()) {
+      alert('请输入姓名');
+      return;
+    }
+    showStep(2);
+  });
+  
+  // 上一步
+  prevBtn.addEventListener('click', function() {
+    showStep(1);
+  });
+  
+  // 提交
+  submitBtn.addEventListener('click', function() {
+    const name = document.getElementById('userName').value;
+    const preference = document.getElementById('userPreference').value;
+    
+    alert(`感谢 ${name}！你的偏好是：${preference}`);
+    multiStepModal.style.display = 'none';
+    
+    // 重置表单
+    document.getElementById('userName').value = '';
+    document.getElementById('userPreference').value = 'tech';
+    showStep(1);
+  });
+  
+  // 点击模态框外部关闭
+  multiStepModal.addEventListener('click', function(e) {
+    if (e.target === this) {
+      this.style.display = 'none';
+    }
+  });
+});
+</script>
+
+
+<h2 id="输入提示框"><a href="#输入提示框" class="headerlink" title="输入提示框"></a>输入提示框</h2><p><button class="dialog-button" onclick="showPromptSequence()">连续输入对话框</button></p>
+<script>
+function showPromptSequence() {
+  const name = prompt("请输入你的姓名：");
+  if (name) {
+    const email = prompt(`你好 ${name}，请输入你的邮箱：`);
+    if (email) {
+      const message = prompt("最后，请输入你的留言：");
+      if (message) {
+        alert(`感谢 ${name}！我们会通过 ${email} 联系你。`);
+      }
+    }
+  }
+}
+</script>
+
+<h2 id="加载状态对话框"><a href="#加载状态对话框" class="headerlink" title="加载状态对话框"></a>加载状态对话框</h2><p><button class="dialog-button" onclick="showLoadingSequence()">显示加载过程</button></p>
+<div id="loadingModal" style="display: none; /* 同上modal样式 */">
+  <div style="text-align: center;">
+    <div style="
+      width: 40px;
+      height: 40px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    "></div>
+    <p id="loadingMessage">正在加载...</p >
+  </div>
+</div>
+
+<style>
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+<script>
+function showLoadingSequence() {
+  const modal = document.getElementById('loadingModal');
+  const message = document.getElementById('loadingMessage');
+  
+  modal.style.display = 'block';
+  message.textContent = '正在初始化...';
+  
+  setTimeout(() => {
+    message.textContent = '加载内容...';
+    setTimeout(() => {
+      message.textContent = '几乎完成了...';
+      setTimeout(() => {
+        modal.style.display = 'none';
+        alert('所有内容加载完成！');
+      }, 1000);
+    }, 1500);
+  }, 1000);
+}
+</script>
+
+<h2 id="用户引导"><a href="#用户引导" class="headerlink" title="用户引导"></a>用户引导</h2><p><button class="dialog-button" onclick="startUserGuide()">开始用户引导</button></p>
+<div id="guideModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000;">
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 15px; max-width: 500px; width: 90%;">
+    <h3 id="guideTitle" style="color: #2c3e50; margin-top: 0;">欢迎使用引导</h3>
+    <p id="guideContent" style="color: #7f8c8d; line-height: 1.6;">引导内容将在这里显示</p >
+    <div style="text-align: right; margin-top: 25px;">
+      <button onclick="prevGuideStep()" style="background: #95a5a6; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-right: 10px;">上一步</button>
+      <button onclick="nextGuideStep()" style="background: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">下一步</button>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+      <span id="guideProgress" style="color: #bdc3c7;">1/4</span>
+    </div>
+  </div>
+</div>
+
+<script>
+const guideSteps = [
+  { title: "欢迎来到我的博客", content: "这里将带你了解博客的主要功能" },
+  { title: "文章阅读", content: "你可以浏览各种技术文章和教程" },
+  { title: "互动功能", content: "欢迎在文章下方留言评论" },
+  { title: "完成引导", content: "现在开始探索吧！如有问题随时联系我" }
+];
+
+let currentGuideStep = 0;
+
+function startUserGuide() {
+  currentGuideStep = 0;
+  showGuideStep(currentGuideStep);
+  document.getElementById('guideModal').style.display = 'block';
+}
+
+function showGuideStep(step) {
+  document.getElementById('guideTitle').textContent = guideSteps[step].title;
+  document.getElementById('guideContent').textContent = guideSteps[step].content;
+  document.getElementById('guideProgress').textContent = `${step + 1}/${guideSteps.length}`;
+  
+  // 更新按钮状态
+  document.querySelector('button[onclick="prevGuideStep()"]').style.display = 
+    step === 0 ? 'none' : 'inline-block';
+  
+  const nextButton = document.querySelector('button[onclick="nextGuideStep()"]');
+  nextButton.textContent = step === guideSteps.length - 1 ? '完成' : '下一步';
+}
+
+function nextGuideStep() {
+  if (currentGuideStep < guideSteps.length - 1) {
+    currentGuideStep++;
+    showGuideStep(currentGuideStep);
+  } else {
+    document.getElementById('guideModal').style.display = 'none';
+    alert('引导完成！欢迎探索博客内容。');
+  }
+}
+
+function prevGuideStep() {
+  if (currentGuideStep > 0) {
+    currentGuideStep--;
+    showGuideStep(currentGuideStep);
+  }
+}
+</script>
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zjie327.github.io/2025/10/11/Markdown%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0-%E5%AF%B9%E8%AF%9D%E6%A1%86/" data-id="cmgnr9wp7000brwunddjw9w9o" data-title="HTML 演示文章-对话框" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/10/11/Markdown%20%E6%A0%BC%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Markdown格式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/10/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">我的第一篇技术文章</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<!-- ======== GISCUS 调试开始 ======== 
+<section style="border: 2px solid blue; padding: 10px; margin: 20px 0; background: #e3f2fd;">
+  <h4>🔍 Giscus 调试信息</h4>
+  <p>!index: true</p >
+  <p>post.comments: true</p >
+  <p>theme.giscus: {&#34;enable&#34;:true,&#34;repo&#34;:&#34;ZJie327/ZJie327.github.io&#34;,&#34;repo_id&#34;:&#34;R_kgDOP8o_IA&#34;,&#34;category&#34;:&#34;Q&amp;A&#34;,&#34;category_id&#34;:&#34;DIC_kwDOP8o_IM4CwWaC&#34;,&#34;mapping&#34;:&#34;pathname&#34;,&#34;strict&#34;:0,&#34;reactions_enabled&#34;:1,&#34;emit_metadata&#34;:0,&#34;input_position&#34;:&#34;bottom&#34;,&#34;theme&#34;:&#34;catppuccin_macchiato&#34;,&#34;lang&#34;:&#34;zh-CN&#34;,&#34;crossorigin&#34;:&#34;anonymous&#34;}</p >
+  <p>theme.giscus.enable: true</p >
+  <p>所有条件满足: true</p >
+</section>
+
+
+  <section id="comments" style="border: 2px solid green; padding: 10px;">
+    <h4>✅ Giscus 评论框（条件满足）</h4>
+    <div class="giscus"></div>
+    <script src="https://giscus.app/client.js"
+            data-repo="ZJie327/ZJie327.github.io"
+            data-repo-id="R_kgDOP8o_IA"
+            data-category="Q&amp;A"
+            data-category-id="DIC_kwDOP8o_IM4CwWaC"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="catppuccin_macchiato"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </section>
+
+ ======== GISCUS 调试结束 ======== -->
+
+
+  <section id="comments">
+    <div class="giscus"></div>
+    <script src="https://giscus.app/client.js"
+            data-repo="ZJie327/ZJie327.github.io"
+            data-repo-id="R_kgDOP8o_IA"
+            data-category="Q&amp;A"
+            data-category-id="DIC_kwDOP8o_IM4CwWaC"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="catppuccin_macchiato"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </section>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">博客搭建</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 10px;">教程</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/10/11/HTML%20%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/">HTML 功能测试</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/11/Stylus%20%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/">Stylus 样式测试</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/11/Markdown%20%E6%A0%BC%E5%BC%8F/">Markdown格式</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/11/Markdown%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0-%E5%AF%B9%E8%AF%9D%E6%A1%86/">HTML 演示文章-对话框</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/">我的第一篇技术文章</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 ZJie327<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+    <a href="/links" class="mobile-nav-link">Links</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+  
+  <script>
+  // 主题管理功能
+  function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+  }
+
+  function setTheme(themeName) {
+    document.documentElement.setAttribute('data-theme', themeName);
+    localStorage.setItem('theme', themeName);
+    
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.theme === themeName);
+    });
+  }
+
+  function bindThemeEvents() {
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.theme-btn')) {
+        const themeBtn = e.target.closest('.theme-btn');
+        setTheme(themeBtn.dataset.theme);
+        
+        // 移动端触觉反馈（如果支持）
+        if (window.navigator.vibrate) {
+          window.navigator.vibrate(10);
+        }
+      }
+    });
+
+    // 键盘快捷键 (Alt + T 循环切换主题)
+    document.addEventListener('keydown', function(e) {
+      if (e.altKey && e.key === 't') {
+        e.preventDefault();
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const themes = ['light', 'dark', 'blue','yellow'];
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextIndex = (currentIndex + 1) % themes.length;
+        setTheme(themes[nextIndex]);
+      }
+    });
+  }
+
+  // 动态创建主题切换器
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('=== 主题切换器脚本开始执行 ===');
+    
+    // 如果切换器已经存在，跳过
+    if (document.querySelector('.theme-switcher')) {
+      console.log('主题切换器已存在');
+      return;
+    }
+    
+    console.log('开始创建主题切换器');
+    
+    // 创建切换器HTML
+    const switcherHTML = `
+      <div class="theme-switcher">
+        <div class="theme-options">
+          <button class="theme-btn" data-theme="light" title="浅色模式">
+            <span class="theme-icon">☀️</span>
+            <span class="theme-name">浅色</span>
+          </button>
+          <button class="theme-btn" data-theme="dark" title="深色模式">
+            <span class="theme-icon">🌙</span>
+            <span class="theme-name">深色</span>
+          </button>
+          <button class="theme-btn" data-theme="blue" title="蓝色主题">
+            <span class="theme-icon">🐬</span>
+            <span class="theme-name">蓝色</span>
+          </button>
+          <button class="theme-btn" data-theme="yellow" title="橙色主题">
+            <span class="theme-icon">🍊</span>
+            <span class="theme-name">橙色</span>
+          </button>
+        </div>
+      </div>
+    `;
+    
+    // 插入到页面中
+    document.body.insertAdjacentHTML('beforeend', switcherHTML);
+    console.log('主题切换器已插入到页面');
+    
+    // 初始化主题和事件绑定
+    initTheme();
+    bindThemeEvents();
+    console.log('主题初始化完成');
+  });
+  </script>
+</body>
+</html>
