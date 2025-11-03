@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>音频播放器 | Mr.Z</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="音频循环播放器     在线播放背景音乐、播客或任何音频内容                                                                                       示例音频                 未知艺术家">
+<meta property="og:type" content="website">
+<meta property="og:title" content="音频播放器">
+<meta property="og:url" content="http://zjie327.github.io/audio-player/index.html">
+<meta property="og:site_name" content="Mr.Z">
+<meta property="og:description" content="音频循环播放器     在线播放背景音乐、播客或任何音频内容                                                                                       示例音频                 未知艺术家">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-03T16:01:00.216Z">
+<meta property="article:author" content="ZJie327">
+<meta property="article:tag" content="试验， 学习">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Mr.Z" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<style>
+/* ===== 替换地球背景图为自定义图片 ===== */
+#banner {
+  background-image: url('/images/my-header-bg.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+}
+
+/* 确保覆盖所有可能的背景图设置 */
+#header-outer #banner,
+.outer #banner,
+.header #banner {
+  background-image: url('/images/my-header-bg.jpg') !important;
+}
+
+/* 确保头部文字可读性*/
+#banner .site-title,
+#banner .site-title a,
+#banner .site-nav a {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8) !important;
+}
+
+:root {
+  --primary-color: #3498db;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #e74c3c;
+  --header-bg: #f8f9fa;
+  --border-color: #e0e0e0;
+}
+
+[data-theme="dark"] {
+  --primary-color: #1a1a1a;
+  --background-color: #1a1a1a;
+  --text-color: #333333;
+  --accent-color: #c0392b;
+  --header-bg: #ffffff;
+  --border-color: #444444;
+}
+[data-theme="blue"] {
+  --primary-color: #1e90ff;
+  --background-color: #87ceeb;
+  --text-color: #2c3e50;
+  --accent-color: #e67e22;
+  --header-bg: #e8f5e8;
+  --border-color: #c8e6c9;
+}
+[data-theme="yellow"] {
+  --primary-color: #ebeb87;
+  --background-color: #ffa11e;
+  --text-color: #2c3e50;
+  --accent-color: #e67e22;
+  --header-bg: #e8f5e8;
+  --border-color: #c8e6c9;
+}
+/* 应用到主要元素 */
+html, body {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* ===== 关键修复：确保header-outer保持透明 ===== */
+#header-outer,
+#header-outer.outer,
+.header-outer {
+  background-color: transparent !important;
+  /* 不设置 background-image: none，保留地球背景图 */
+}
+
+/* 头部内部的容器也保持透明 */
+#header-outer .header,
+#header-outer .header-inner {
+  background-color: transparent !important;
+}
+
+/* 确保头部文字可读性 */
+#header-outer .site-title,
+#header-outer .site-title a,
+#header-outer .site-nav,
+#header-outer .site-nav a,
+#header-outer .menu,
+#header-outer .menu a {
+  color: var(--text-color) !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] #header-outer .site-title,
+[data-theme="dark"] #header-outer .site-title a,
+[data-theme="dark"] #header-outer .site-nav,
+[data-theme="dark"] #header-outer .site-nav a,
+[data-theme="dark"] #header-outer .menu,
+[data-theme="dark"] #header-outer .menu a {
+  color: #ffffff !important;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.8);
+}
+
+/* ===== 应用到其他内容区域 ===== */
+#container,
+#wrap,
+.outer:not(#header-outer), /* 排除header-outer */
+.footer,
+.sidebar,
+.post,
+.article-entry,
+.article-meta,
+.comments,
+.content {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* 普通头部元素（非header-outer内的） */
+.header:not(#header-outer .header) {
+  background-color: var(--header-bg) !important;
+}
+
+/* 链接颜色统一 */
+a,
+a:link,
+a:visited {
+  color: var(--primary-color) !important;
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-color) !important;
+}
+
+/* 按钮和交互元素 */
+button,
+.btn {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+.theme-btn {
+  background: #f8f9fa !important;
+  color: #333 !important;
+  border-color: #dee2e6 !important;
+}
+
+.theme-btn.active {
+  background: var(--primary-color) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* 代码块 */
+pre, code, .highlight {
+  background-color: var(--header-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.theme-switcher {
+  position: fixed !important;
+  top: 500px !important;        /* 距离顶部距离 */
+  right: 10px !important;       /* 距离右侧距离 */
+  left: auto !important;
+  bottom: auto !important;
+  transform: none !important;   /* 取消居中变换 */
+  z-index: 999999 !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid #e0e0e0 !important;  /* 更细的边框 */
+  border-radius: 10px !important;
+  padding: 12px !important;     /* 缩小内边距 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  width: auto !important;
+  height: auto !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  backdrop-filter: blur(10px);  /* 毛玻璃效果 */
+}
+
+.theme-options {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;          /* 缩小按钮间距 */
+  width: 50px !important;      /* 缩小整体宽度 */
+}
+
+.theme-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;          /* 缩小图标文字间距 */
+  padding: 6px 8px !important;  /* 缩小按钮内边距 */
+  background: #f8f9fa !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-size: 11px !important;   /* 缩小字体 */
+  font-weight: 500 !important;
+  color: #333 !important;
+  transition: all 0.2s ease !important;
+  width: 100% !important;
+  min-height: 32px !important;  /* 确保触摸目标足够大 */
+}
+
+.theme-btn:hover {
+  background: #e9ecef !important;
+  transform: scale(1.02) !important;  /* 更温和的悬停效果 */
+}
+
+.theme-btn.active {
+  background: #3498db !important;
+  color: white !important;
+  border-color: #3498db !important;
+}
+
+.theme-icon {
+  font-size: 12px !important;   /* 缩小图标 */
+}
+
+.theme-name {
+  font-size: 10px !important;   /* 缩小文字 */
+  font-weight: 500 !important;
+}   
+
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .theme-switcher {
+    top: 40% !important;
+    padding: 15px !important;
+  }
+  
+  .theme-options {
+    width: 130px !important;
+  }
+  
+  .theme-btn {
+    padding: 10px !important;
+    font-size: 13px !important;
+  }
+}
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .theme-switcher {
+    top: 500px !important;       /* 移动端更靠上 */
+    right: 10px !important;
+    padding: 10px !important;
+  }
+  
+  .theme-options {
+    width: 30px !important;     /* 移动端更窄 */
+    gap: 5px !important;
+  }
+  
+  .theme-btn {
+    padding: 8px 6px !important;
+    font-size: 10px !important;
+    min-height: 36px !important; /* 移动端触摸目标更大 */
+  }
+  
+  .theme-icon {
+    font-size: 14px !important; /* 移动端图标稍大 */
+  }
+  
+  .theme-name {
+    font-size: 9px !important;
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+  .theme-switcher {
+    top: 500px !important;
+    right: 5px !important;
+    padding: 8px !important;
+  }
+  
+  .theme-options {
+    width: 30px !important;
+  }
+}
+/* 确保其他元素不会覆盖切换器 */
+.header,
+.footer,
+.article-entry,
+.post,
+.content-wrap {
+  position: relative;
+  z-index: 1;
+}
+</style>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Mr.Z</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">我的第一个网页</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/links">Links</a>
+        
+          <a class="main-nav-link" href="/video-player/">video</a>
+        
+          <a class="main-nav-link" href="/audio-player/">aodio</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ZJie327.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/audio-player/index.html" class="article-date">
+  <time class="dt-published" datetime="2025-11-02T16:00:00.000Z" itemprop="datePublished">2025-11-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      音频播放器
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <div class="audio-page-container">
+    <h1>音频循环播放器</h1>
+    <p>在线播放背景音乐、播客或任何音频内容</p >
+    <div class="audio-player-wrapper">
+        <div class="audio-info-card">
+            <div class="album-art">
+                <i class="fas fa-music"></i>
+            </div>
+            <div class="track-info">
+                <h3 id="trackTitle">示例音频</h3>
+                <p id="artistName">未知艺术家</p >
+            </div>
+        </div>
+        <audio id="mainAudioPlayer" loop controls>
+            <source src="/audios/demo-audio.mp3" type="audio/mpeg">
+            <source src="/audios/demo-audio.ogg" type="audio/ogg">
+            您的浏览器不支持HTML5音频播放。
+        </audio>
+        <div class="audio-controls">
+            <button onclick="togglePlayPause()" class="audio-btn" id="playPauseBtn">
+                <i class="fas fa-play"></i>
+            </button>
+            <button onclick="toggleMute()" class="audio-btn" id="muteBtn">
+                <i class="fas fa-volume-up"></i>
+            </button>
+            <button onclick="previousTrack()" class="audio-btn">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button onclick="nextTrack()" class="audio-btn">
+                <i class="fas fa-step-forward"></i>
+            </button>
+            <button onclick="toggleLoop()" class="audio-btn" id="loopBtn">
+                <i class="fas fa-redo"></i>
+            </button>
+        </div>
+        <div class="progress-container">
+            <span id="currentTime">0:00</span>
+            <div class="progress-bar" onclick="seekAudio(event)">
+                <div class="progress" id="audioProgress"></div>
+            </div>
+            <span id="duration">0:00</span>
+        </div>
+        <div class="volume-container">
+            <i class="fas fa-volume-down"></i>
+            <input type="range" id="volumeSlider" min="0" max="100" value="50" oninput="changeVolume(this.value)">
+            <i class="fas fa-volume-up"></i>
+        </div>
+    </div>
+    <div class="playlist">
+        <h3>播放列表</h3>
+        <ul id="playlist">
+            <li class="playlist-item active" onclick="playTrack(0)">爱到期</li>
+            <li class="playlist-item" onclick="playTrack(1)">陈奕迅-富士山下</li>
+            <li class="playlist-item" onclick="playTrack(2)">达拉崩吧（Live)-周深</li>
+            <li class="playlist-item active" onclick="playTrack(3)">红色高跟鞋</li>
+            <li class="playlist-item active" onclick="playTrack(4)">如果呢</li>
+        </ul>
+    </div>
+</div>
+<style>
+.audio-page-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.audio-player-wrapper {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+.audio-info-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.album-art {
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    font-size: 30px;
+}
+.track-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.4em;
+}
+.track-info p {
+    margin: 0;
+    opacity: 0.8;
+}
+audio {
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+.audio-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+.audio-btn {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.audio-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.1);
+}
+.audio-btn:active {
+    transform: scale(0.95);
+}
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+}
+.progress {
+    height: 100%;
+    background: white;
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.1s;
+}
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+#volumeSlider {
+    flex: 1;
+    height: 5px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 5px;
+    outline: none;
+}
+.playlist {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+}
+.playlist h3 {
+    margin-top: 0;
+    color: #333;
+}
+.playlist-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #555;
+}
+.playlist-item:hover {
+    background: #e9ecef;
+    padding-left: 20px;
+}
+.playlist-item.active {
+    background: #007bff;
+    color: white;
+    border-radius: 8px;
+}
+@media (max-width: 768px) {
+    .audio-page-container {
+        padding: 15px;
+    }
+    .audio-player-wrapper {
+        padding: 20px;
+    }
+    .audio-info-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .album-art {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+</style>
+<script>
+const audio = document.getElementById('mainAudioPlayer');
+const playPauseBtn = document.getElementById('playPauseBtn');
+const muteBtn = document.getElementById('muteBtn');
+const loopBtn = document.getElementById('loopBtn');
+const progress = document.getElementById('audioProgress');
+const currentTimeEl = document.getElementById('currentTime');
+const durationEl = document.getElementById('duration');
+const volumeSlider = document.getElementById('volumeSlider');
+const trackTitle = document.getElementById('trackTitle');
+// 播放列表数据
+const playlist = [
+    { title: "爱到期", src: "爱到期.mp3" },
+    { title: "陈奕迅-富士山下", src: "陈奕迅-富士山下.mp3" },
+    { title: "达拉崩吧（Live)-周深", src: "达拉崩吧（Live)-周深.mp3" },
+    { title: "红色高跟鞋", src: "红色高跟鞋.mp3" },
+    { title: "如果呢", src: "如果呢.mp3" }
+];
+let currentTrack = 0;
+// 初始化
+audio.volume = volumeSlider.value / 100;
+// 播放/暂停
+function togglePlayPause() {
+    if (audio.paused) {
+        audio.play();
+        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+    } else {
+        audio.pause();
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+    }
+}
+// 静音/取消静音
+function toggleMute() {
+    audio.muted = !audio.muted;
+    muteBtn.innerHTML = audio.muted ? 
+        '<i class="fas fa-volume-mute"></i>' : 
+        '<i class="fas fa-volume-up"></i>';
+}
+// 切换循环
+function toggleLoop() {
+    audio.loop = !audio.loop;
+    loopBtn.style.background = audio.loop ? 
+        'rgba(255,255,255,0.4)' : 
+        'rgba(255,255,255,0.2)';
+}
+// 改变音量
+function changeVolume(value) {
+    audio.volume = value / 100;
+}
+// 进度条点击跳转
+function seekAudio(event) {
+    const progressBar = event.currentTarget;
+    const clickPosition = event.offsetX;
+    const totalWidth = progressBar.offsetWidth;
+    const percentage = clickPosition / totalWidth
+    audio.currentTime = percentage * audio.duration;
+}
+function previousTrack() {
+    currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
+    playTrack(currentTrack);
+}
+function nextTrack() {
+    currentTrack = (currentTrack + 1) % playlist.length;
+    playTrack(currentTrack);
+}
+// 播放指定曲目
+function playTrack(index) {
+    currentTrack = index;
+    const track = playlist[index];
+    audio.src = track.src;
+    trackTitle.textContent = track.title;
+    // 更新播放列表高亮
+    document.querySelectorAll('.playlist-item').forEach((item, i) => {
+        item.classList.toggle('active', i === index);
+    });
+    audio.play();
+    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+}
+// 更新进度条
+audio.addEventListener('timeupdate', function() {
+    if (audio.duration) {
+        const progressPercent = (audio.currentTime / audio.duration) * 100;
+        progress.style.width = progressPercent + '%';
+        currentTimeEl.textContent = formatTime(audio.currentTime);
+        durationEl.textContent = formatTime(audio.duration);
+    }
+});
+// 格式化时间
+function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+}
+// 音频结束时自动下一曲（如果没开启循环）
+audio.addEventListener('ended', function() {
+    if (!audio.loop) {
+        nextTrack();
+    }
+});
+// 初始化第一首曲目
+playTrack(0);
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zjie327.github.io/audio-player/index.html" data-id="cmhje6g4p0002gcuneh33f9ob" data-title="音频播放器" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+
+
+<!-- ======== GISCUS 调试开始 ======== 
+<section style="border: 2px solid blue; padding: 10px; margin: 20px 0; background: #e3f2fd;">
+  <h4>🔍 Giscus 调试信息</h4>
+  <p>!index: true</p >
+  <p>post.comments: true</p >
+  <p>theme.giscus: {&#34;enable&#34;:true,&#34;repo&#34;:&#34;ZJie327/ZJie327.github.io&#34;,&#34;repo_id&#34;:&#34;R_kgDOP8o_IA&#34;,&#34;category&#34;:&#34;Q&amp;A&#34;,&#34;category_id&#34;:&#34;DIC_kwDOP8o_IM4CwWaC&#34;,&#34;mapping&#34;:&#34;pathname&#34;,&#34;strict&#34;:0,&#34;reactions_enabled&#34;:1,&#34;emit_metadata&#34;:0,&#34;input_position&#34;:&#34;bottom&#34;,&#34;theme&#34;:&#34;catppuccin_macchiato&#34;,&#34;lang&#34;:&#34;zh-CN&#34;,&#34;crossorigin&#34;:&#34;anonymous&#34;}</p >
+  <p>theme.giscus.enable: true</p >
+  <p>所有条件满足: true</p >
+</section>
+
+
+  <section id="comments" style="border: 2px solid green; padding: 10px;">
+    <h4>✅ Giscus 评论框（条件满足）</h4>
+    <div class="giscus"></div>
+    <script src="https://giscus.app/client.js"
+            data-repo="ZJie327/ZJie327.github.io"
+            data-repo-id="R_kgDOP8o_IA"
+            data-category="Q&amp;A"
+            data-category-id="DIC_kwDOP8o_IM4CwWaC"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="catppuccin_macchiato"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </section>
+
+ ======== GISCUS 调试结束 ======== -->
+
+
+  <section id="comments">
+    <div class="giscus"></div>
+    <script src="https://giscus.app/client.js"
+            data-repo="ZJie327/ZJie327.github.io"
+            data-repo-id="R_kgDOP8o_IA"
+            data-category="Q&amp;A"
+            data-category-id="DIC_kwDOP8o_IM4CwWaC"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="catppuccin_macchiato"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </section>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">技术教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">博客搭建</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 10px;">教程</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BE%E8%BF%9B%E9%98%B6/">轮播图进阶</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BElevel3/">轮播图level.3</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/11/Markdown%20%E6%A0%BC%E5%BC%8F/">Markdown格式</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/11/Stylus%20%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/">Stylus 样式测试</a>
+          </li>
+        
+          <li>
+            <a href="/2025/10/11/HTML%20%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/">HTML 功能测试</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 ZJie327<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+    <a href="/links" class="mobile-nav-link">Links</a>
+  
+    <a href="/video-player/" class="mobile-nav-link">video</a>
+  
+    <a href="/audio-player/" class="mobile-nav-link">aodio</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+  
+  <script>
+  // 主题管理功能
+  function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+  }
+
+  function setTheme(themeName) {
+    document.documentElement.setAttribute('data-theme', themeName);
+    localStorage.setItem('theme', themeName);
+    
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.theme === themeName);
+    });
+  }
+
+  function bindThemeEvents() {
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.theme-btn')) {
+        const themeBtn = e.target.closest('.theme-btn');
+        setTheme(themeBtn.dataset.theme);
+        
+        // 移动端触觉反馈（如果支持）
+        if (window.navigator.vibrate) {
+          window.navigator.vibrate(10);
+        }
+      }
+    });
+
+    // 键盘快捷键 (Alt + T 循环切换主题)
+    document.addEventListener('keydown', function(e) {
+      if (e.altKey && e.key === 't') {
+        e.preventDefault();
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const themes = ['light', 'dark', 'blue','yellow'];
+        const currentIndex = themes.indexOf(currentTheme);
+        const nextIndex = (currentIndex + 1) % themes.length;
+        setTheme(themes[nextIndex]);
+      }
+    });
+  }
+
+  // 动态创建主题切换器
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('=== 主题切换器脚本开始执行 ===');
+    
+    // 如果切换器已经存在，跳过
+    if (document.querySelector('.theme-switcher')) {
+      console.log('主题切换器已存在');
+      return;
+    }
+    
+    console.log('开始创建主题切换器');
+    
+    // 创建切换器HTML
+    const switcherHTML = `
+      <div class="theme-switcher">
+        <div class="theme-options">
+          <button class="theme-btn" data-theme="light" title="浅色模式">
+            <span class="theme-icon">☀️</span>
+            <span class="theme-name">浅色</span>
+          </button>
+          <button class="theme-btn" data-theme="dark" title="深色模式">
+            <span class="theme-icon">🌙</span>
+            <span class="theme-name">深色</span>
+          </button>
+          <button class="theme-btn" data-theme="blue" title="蓝色主题">
+            <span class="theme-icon">🐬</span>
+            <span class="theme-name">蓝色</span>
+          </button>
+          <button class="theme-btn" data-theme="yellow" title="橙色主题">
+            <span class="theme-icon">🍊</span>
+            <span class="theme-name">橙色</span>
+          </button>
+        </div>
+      </div>
+    `;
+    
+    // 插入到页面中
+    document.body.insertAdjacentHTML('beforeend', switcherHTML);
+    console.log('主题切换器已插入到页面');
+    
+    // 初始化主题和事件绑定
+    initTheme();
+    bindThemeEvents();
+    console.log('主题初始化完成');
+  });
+  </script>
+</body>
+</html>
