@@ -4,23 +4,20 @@
   <meta charset="utf-8">
   
   
-  <title>HTML 功能测试 | Mr.Z</title>
+  <title>CYY | Mr.Z</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="测试基础 HTML   HTML 区块测试   如果看到这个带边框的区域，说明 HTML 工作正常   测试 JavaScript   测试 JS    测试 CSS .test-css {   background: linear-gradient(45deg, #ff6b6b, #4ecdc4);   color: white;   padding: 15px;   border-radius">
+  <meta name="description" content="#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;#include &lt;math.h&gt;#define eps 1e-10 &#x2F;&#x2F; 将num二进制的第n位修改成op(0&#x2F;1),n&lt;&#x3D;62(long long 长度) n&#x3D;&#x3D;63,要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML 功能测试">
-<meta property="og:url" content="http://zjie327.github.io/2025/10/11/HTML%20%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:title" content="CYY">
+<meta property="og:url" content="http://zjie327.github.io/2025/11/29/C%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB/%E4%BD%8D%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Mr.Z">
-<meta property="og:description" content="测试基础 HTML   HTML 区块测试   如果看到这个带边框的区域，说明 HTML 工作正常   测试 JavaScript   测试 JS    测试 CSS .test-css {   background: linear-gradient(45deg, #ff6b6b, #4ecdc4);   color: white;   padding: 15px;   border-radius">
+<meta property="og:description" content="#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;string.h&gt;#include &lt;math.h&gt;#define eps 1e-10 &#x2F;&#x2F; 将num二进制的第n位修改成op(0&#x2F;1),n&lt;&#x3D;62(long long 长度) n&#x3D;&#x3D;63,要">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://zjie327.github.io/images/my-header-blog.img">
-<meta property="og:image" content="http://zjie327.github.io/images/actual-image.jpg">
-<meta property="article:published_time" content="2025-10-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-10-11T15:01:05.566Z">
+<meta property="article:published_time" content="2025-11-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-29T12:00:38.197Z">
 <meta property="article:author" content="ZJie327">
 <meta property="article:tag" content="试验， 学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zjie327.github.io/images/my-header-blog.img">
   
     <link rel="alternate" href="/atom.xml" title="Mr.Z" type="application/atom+xml">
   
@@ -382,10 +379,10 @@ pre, code, .highlight {
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-HTML 功能测试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-C语言汇总/位操作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2025/10/11/HTML%20%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" class="article-date">
-  <time class="dt-published" datetime="2025-10-10T16:00:00.000Z" itemprop="datePublished">2025-10-11</time>
+    <a href="/2025/11/29/C%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB/%E4%BD%8D%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time class="dt-published" datetime="2025-11-28T16:00:00.000Z" itemprop="datePublished">2025-11-29</time>
 </a>
     
   </div>
@@ -396,7 +393,7 @@ pre, code, .highlight {
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      HTML 功能测试
+      CYY
     </h1>
   
 
@@ -404,165 +401,14 @@ pre, code, .highlight {
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="测试基础-HTML"><a href="#测试基础-HTML" class="headerlink" title="测试基础 HTML"></a>测试基础 HTML</h3><div style="border: 2px dashed #3498db; padding: 20px;">
-  <h4>HTML 区块测试</h4>
-  <p>如果看到这个带边框的区域，说明 HTML 工作正常</p >
-</div>
+        <p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br>#include &lt;string.h&gt;<br>#include &lt;math.h&gt;<br>#define eps 1e-10</p>
+<p>&#x2F;&#x2F; 将num二进制的第n位修改成op(0&#x2F;1),n&lt;&#x3D;62(long long 长度) n&#x3D;&#x3D;63,要考虑符号位<br>&#x2F;&#x2F; 第63 . . . 3,2,1,0<br>void vary_n(long long *num,int n,long long op){<br>    if(op&#x3D;&#x3D;1){<br>        *num &#x3D; (*num&amp;((long long)1&lt;&lt;n));<br>    }<br>    else if(((*num&gt;&gt;n)&amp;(long long)1)&#x3D;&#x3D;1){<br>            <em>num -&#x3D; ((long long)1&lt;&lt;n);<br>    }<br>}<br>int main() {<br>    int n,op;<br>    long long num;<br>    while(scanf(“%lld%d%d”,&amp;num,&amp;n,&amp;op)!&#x3D;EOF){<br>        for(int i&#x3D;8*sizeof(num)-1;i&gt;&#x3D;0;i–){            &#x2F;&#x2F;用sizeof更普遍<br>            printf(“%lld”,(num&gt;&gt;i)&amp;1);                  &#x2F;&#x2F;二进制输出对比<br>        }<br>        printf(“\n”);<br>        vary_n(&amp;num,n,op);<br>        for(int i&#x3D;8</em>sizeof(num)-1;i&gt;&#x3D;0;i–){<br>            printf(“%lld”,(num&gt;&gt;i)&amp;1);<br>        }<br>        printf(“\n”);<br>    }<br>    return 0;<br>}</p>
+<p>&#x2F;&#x2F; 求数num二进制下最高位(1)在第几位,注意有无符号的区别，有符号超过63位为01111111111….，num&#x3D;&#x3D;0返回-1<br>int Max_high(long long num){<br>    for(int i&#x3D;8<em>sizeof(num)-1;i&gt;&#x3D;0;i–){<br>        if(((num&gt;&gt;i)&amp;(long long)1)&#x3D;&#x3D;1){<br>            return i;<br>        }<br>    }<br>    return -1;<br>}<br>&#x2F;&#x2F; 求数num二进制下最高位开始计第k个(1)在第几位，num&#x3D;&#x3D;0，无返回-1<br>int k_high(long long num,int k){<br>    int j&#x3D;0;<br>    for(int i&#x3D;8</em>sizeof(num)-1;i&gt;&#x3D;0;i–){<br>        if(((num&gt;&gt;i)&amp;(long long)1)&#x3D;&#x3D;1){<br>            j++;<br>            if(j&#x3D;&#x3D;k){<br>                return i;<br>            }<br>        }<br>    }<br>    return -1;<br>}<br>&#x2F;&#x2F; 统计二进制形式num中1的个数<br>int num_1(long long num){<br>    int num_1&#x3D;0;<br>    for(int i&#x3D;8<em>sizeof(num)-1;i&gt;&#x3D;0;i–){<br>        if(((num&gt;&gt;i)&amp;(long long)1)&#x3D;&#x3D;1){<br>            num_1++;<br>        }<br>    }<br>    return num_1;<br>}<br>int main() {<br>    long long num;<br>    while(scanf(“%lld”,&amp;num)!&#x3D;EOF){<br>        for(int i&#x3D;8</em>sizeof(num)-1;i&gt;&#x3D;0;i–){<br>            printf(“%lld”,(num&gt;&gt;i)&amp;1);<br>        }<br>        printf(“\n”);<br>        printf(“%d\n”,Max_high(num));<br>        printf(“%d\n”,num_1(num));<br>    }<br>    return 0;<br>}</p>
 
-<h3 id="测试-JavaScript"><a href="#测试-JavaScript" class="headerlink" title="测试 JavaScript"></a>测试 JavaScript</h3><button onclick="document.getElementById('js-test').innerHTML='✅ JavaScript 工作正常!'">
-  测试 JS
-</button>
-<div id="js-test" style="margin-top: 10px;"></div>
-
-<h3 id="测试-CSS"><a href="#测试-CSS" class="headerlink" title="测试 CSS"></a>测试 CSS</h3><style>
-.test-css {
-  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
-}
-</style>
-<div class="test-css">
-  CSS 样式测试 - 如果看到渐变背景，说明 CSS 工作正常
-</div>
-
-<p>这是正常的 Markdown 文字。</p>
-<div style="background: #f0f8ff; padding: 20px; border-radius: 8px;">
-  <h3>这是 HTML 区块</h3>
-  <p>这里可以写任何 HTML 内容</p >
-  <button onclick="alert('xiao xiang')">Click</button>
-</div>
-
-<p>继续 Markdown 内容…</p>
-<h2 id="Markdown-标题"><a href="#Markdown-标题" class="headerlink" title="Markdown 标题"></a>Markdown 标题</h2><p>下面是嵌入的 HTML 组件：</p>
-<div class="custom-widget">
-  <style>
-    .custom-widget {
-      border: 2px solid #3498db;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 20px 0;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-    }
-    .demo-btn {
-      background: #e74c3c;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
-  
-  <h3>🎯 交互式演示</h3>
-  <p>这个区域完全用 HTML/CSS/JavaScript 创建</p >
-  
-<p>  <button class="demo-btn" onclick="showTime()">显示当前时间</button><br>  <div id="time-display" style="margin-top: 15px;"></div></p>
-  <script>
-    function showTime() {
-      const now = new Date();
-      document.getElementById('time-display').innerHTML = 
-        `<strong>当前时间：${now.toLocaleString()}</strong>`;
-    }
-  </script>
-</div>
-
-<h2 id="继续文章内容"><a href="#继续文章内容" class="headerlink" title="继续文章内容"></a>继续文章内容</h2><p>又回到了 Markdown 格式…</p>
-<h2 id="自定义样式区块"><a href="#自定义样式区块" class="headerlink" title="自定义样式区块"></a>自定义样式区块</h2><div class="tip-box" style="
-    background: #e7f3ff;
-    border-left: 4px solid #2196F3;
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 0 8px 8px 0;
-">
-    <strong>💡 提示：</strong>
-    这是一个自定义的提示框样式
-</div>
-
-<h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-  <div style="background: #ffeaa7; padding: 15px; border-radius: 8px;">
-    <h4>左侧内容</h4>
-    <p>网格布局的左侧</p >
-  </div>
-  <div style="background: #a29bfe; padding: 15px; border-radius: 8px;">
-    <h4>右侧内容</h4>
-    <p>网格布局的右侧</p >
-  </div>
-</div>
-<!--
-## 嵌入外部内容
-
-<!-- 嵌入 Codepen 
-<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="result" data-slug-hash="xxyz" data-user="username">
-  See the Pen <a href="">Example</a > on CodePen.
-</p >
-
-<!-- 嵌入 YouTube 
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/视频ID" frameborder="0" allowfullscreen></iframe>
--->
-<h2 id="JavaScript限制"><a href="#JavaScript限制" class="headerlink" title="JavaScript限制"></a>JavaScript限制</h2><!-- 简单的 JS 可以工作 -->
-<p><button onclick="alert('xiao ying')">Click</button></p>
-<!-- 但复杂的 JS 可能受浏览器安全策略限制 -->
-<script>
-// 某些 AJAX 请求可能被阻止
-// 跨域请求可能失败
-</script>
-
-<h2 id="样式冲突"><a href="#样式冲突" class="headerlink" title="样式冲突"></a>样式冲突</h2><style>
-/* 这些样式只影响当前元素 */
-.custom-element {
-  color: red;
-}
-</style>
-<div class="custom-element">测试</div>
-<!--## 文件路径-->
-<!--
- 使用绝对路径 
-<img src="/images/my-header-blog.img" alt="图片"> -->
-<!--
- 或者使用 Hexo 资源标签 
-
--->
-
-<h2 id="渐进增强"><a href="#渐进增强" class="headerlink" title="渐进增强"></a>渐进增强</h2><div class="enhanced-content">
-  <!-- 基础 HTML 内容 -->
-  <p>基础信息展示</p>
-  
-  <!-- 增强的交互功能 -->
-  <script>
-    if (typeof Modernizr !== 'undefined') {
-      // 只在支持的情况下加载高级功能
-    }
-  </script>
-</div>
-
-<h2 id="移动端适配"><a href="#移动端适配" class="headerlink" title="移动端适配"></a>移动端适配</h2><div style="
-  max-width: 100%;
-  overflow-x: auto;
-  padding: 15px;
-  background: #5293d4ff;
-">
-  <!-- 确保内容在移动端正常显示 -->
-</div>
-<!--
-## 性能考虑
- 懒加载图片 
-<img src="/images/placeholder.jpg" data-src="/images/actual-image.jpg" class="lazy-load">
--->
-<!--
-<script>
-// 简单的懒加载实现
-document.addEventListener('DOMContentLoaded', function() {
-  const lazyImages = document.querySelectorAll('.lazy-load');
-  // 懒加载逻辑...
-});
-</script> 
--->
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zjie327.github.io/2025/10/11/HTML%20%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" data-id="cmik8v74f000188un2445e98z" data-title="HTML 功能测试" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://zjie327.github.io/2025/11/29/C%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB/%E4%BD%8D%E6%93%8D%E4%BD%9C/" data-id="cmik8v74k000f88unbx6u198o" data-title="CYY" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -572,19 +418,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
 <nav id="article-nav">
   
-    <a href="/2025/10/19/%E8%BD%AE%E6%92%AD%E5%9B%BE%E8%BF%9B%E9%98%B6/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          轮播图进阶
-        
-      </div>
-    </a>
   
-  
-    <a href="/2025/10/11/Markdown%20%E6%A0%BC%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2025/11/29/C%E8%AF%AD%E8%A8%80%E6%B1%87%E6%80%BB/%E6%A8%A1%E6%9D%BF/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">Markdown格式</div>
+      <div class="article-nav-title">CYY</div>
     </a>
   
 </nav>
